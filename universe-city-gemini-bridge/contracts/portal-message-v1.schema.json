@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lcobb10-maker/lloyd-cobb-jr-/blob/main/universe-city-gemini-bridge/contracts/portal-message-v1.schema.json",
+  "title": "Proposed UC Portal Bridge Message Contract (not yet deployed)",
+  "description": "Public-safe draft: sender origin/source must also be authenticated at runtime. An ACK is not proof of completed backend work.",
+  "type": "object",
+  "required": [
+    "contractVersion",
+    "requestId",
+    "type",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "contractVersion": {
+      "const": "uc-portal-v1"
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 100,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "type": {
+      "enum": [
+        "HELLO",
+        "HELLO_ACK",
+        "ENTER_WORLD",
+        "ENTER_WORLD_ACK",
+        "ADD_SHOPIFY_VARIANT",
+        "ADD_SHOPIFY_VARIANT_ACK",
+        "SHOW_DEALER",
+        "SHOW_DEALER_ACK",
+        "REQUEST_TEST_DRIVE",
+        "REQUEST_TEST_DRIVE_ACK",
+        "TRANSFER_ROOM",
+        "TRANSFER_ROOM_ACK",
+        "ERROR"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    },
+    "replyTo": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 100
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ADD_SHOPIFY_VARIANT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "shopifyVariantId",
+              "quantity"
+            ],
+            "properties": {
+              "shopifyVariantId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "REQUEST_TEST_DRIVE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "dealerId",
+              "listingId",
+              "consent"
+            ],
+            "properties": {
+              "dealerId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "listingId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "consent": {
+                "const": true
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ERROR"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": [
+              "code",
+              "message",
+              "recoverable"
+            ],
+            "properties": {
+              "code": {
+                "enum": [
+                  "UNAUTHORIZED",
+                  "OFFLINE",
+                  "TIMEOUT",
+                  "STALE_DATA",
+                  "CONTRACT_MISMATCH",
+                  "DECLINED"
+                ]
+              },
+              "message": {
+                "type": "string"
+              },
+              "recoverable": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ]
+}
