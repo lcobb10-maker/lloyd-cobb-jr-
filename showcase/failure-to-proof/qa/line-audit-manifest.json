@@ -1,0 +1,13 @@
+{
+  "files": {
+    "template.html": 77,
+    "style.css": 24,
+    "upgrade.css": 58,
+    "app.js": 153,
+    "upgrade_runtime.js": 157,
+    "build.py": 13
+  },
+  "total_authored_physical_lines": 482,
+  "sha256": "70c58e4c223a5be821e52c025bc0157979c32c76ba7a0b0e71a32980c824a050",
+  "report_bytes": 106938
+}
