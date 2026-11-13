@@ -254,10 +254,31 @@ async function copyText(value,button){
   await navigator.clipboard.writeText(value);
   button.textContent='COPIED ✓';
  }catch(e){
-  const pane=document.createElement('textarea');pane.value=value;pane.setAttribute('aria-label','Select this plain-text receipt');pane.style.cssText='position:fixed;inset:10%;z-index:99;background:#071521;color:#eee5d6;padding:20px;border:2px solid #e1bd87;width:80%;height:70%';
-  document.body.appendChild(pane);pane.focus();pane.select();
-  button.textContent='SELECT & COPY FROM TEXT BOX';
-  const close=e=>{if(e.key==='Escape'){pane.remove();document.removeEventListener('keydown',close)}};document.addEventListener('keydown',close);
+  // Browser clipboard permissions can be unavailable in embedded previews.
+  // Provide an explicit touch-accessible, keyboard-dismissable fallback.
+  const previous=document.activeElement;
+  const dialog=document.createElement('div');
+  dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');
+  dialog.setAttribute('aria-label','Copy the mock test receipt');
+  dialog.style.cssText='position:fixed;inset:0;z-index:99;background:#02070de8;display:grid;place-items:center;padding:18px';
+  const panel=document.createElement('div');
+  panel.style.cssText='width:min(700px,100%);height:min(560px,90vh);display:flex;flex-direction:column;gap:12px;padding:18px;background:#0d2330;border:1px solid #e0c08c';
+  const heading=document.createElement('strong');heading.textContent='Select and copy the receipt';
+  const pane=document.createElement('textarea');pane.value=value;
+  pane.setAttribute('aria-label','Text of mock acceptance receipt');
+  pane.readOnly=true;
+  pane.style.cssText='width:100%;flex:1;min-height:130px;resize:none;background:#071521;color:#eee5d6;padding:14px;border:1px solid #8fa9ad;font:13px/1.5 monospace';
+  const closeButton=document.createElement('button');closeButton.type='button';
+  closeButton.textContent='CLOSE & RETURN TO EXPERIENCE';
+  closeButton.style.cssText='padding:12px;background:#dfbd8b;color:#0b1926;border:0;font-weight:800;min-height:44px';
+  const dismiss=()=>{document.removeEventListener('keydown',keyboard);dialog.remove();previous?.focus?.()};
+  const keyboard=e=>{if(e.key==='Escape'){e.preventDefault();dismiss()}else if(e.key==='Tab'){e.preventDefault();(document.activeElement===pane?closeButton:pane).focus()}};
+  closeButton.addEventListener('click',dismiss);
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dismiss()});
+  document.addEventListener('keydown',keyboard);
+  panel.append(heading,pane,closeButton);dialog.append(panel);
+  document.body.appendChild(dialog);pane.focus();pane.select();
+  button.textContent='RECEIPT READY TO SELECT';
  }
  setTimeout(()=>{button.textContent=original},3000);
 }
@@ -274,6 +295,21 @@ function stopDirector(){
  $('directorOverlay').hidden=true;
  $('watchDemo').setAttribute('aria-pressed','false');
  $('watchDemo').textContent='▶ WATCH THE DIRECTOR CUT';
+}
+function interruptDirectorForManualUse(){
+ if(!state.director.active)return;
+ stopDirector();
+ // Prevent a pending director-initiated synthetic test from awarding a result after exit.
+ if(state.phase==='testing'){
+  clearTimers();
+  state.phase='repair';
+  $('runTest').disabled=false;
+  $('runTest').textContent='▶ SIMULATE ACCEPTANCE TEST';
+  $('outcomeBadge').textContent='INTERRUPTED · NOT VERIFIED';
+  $('testStatus').textContent='Previous mock check canceled. Run the complete test to earn review credit.';
+  $('copyReceipt').disabled=true;
+  $('testLog').replaceChildren();
+ }
 }
 function startDirector(){
  if(state.director.active){stopDirector();return}
@@ -322,14 +358,14 @@ function renderMission(index){
  m.options.forEach(([name],i)=>{
    const b=document.createElement('button');b.type='button';b.dataset.index=String(i);b.setAttribute('aria-pressed','false');
    const n=document.createElement('span');n.textContent=number(i+1);const t=document.createTextNode(name);b.append(n,t);
-   b.addEventListener('click',()=>choose(i));chooser.appendChild(b);
+   b.addEventListener('click',()=>{if(state.director.active)interruptDirectorForManualUse();choose(i)});chooser.appendChild(b);
  });
  $('missionSelector').replaceChildren();
  missions.forEach((mission,i)=>{
-  const b=document.createElement('button');b.type='button';b.setAttribute('aria-current',String(i===index));b.className=state.completed.has(i)?'complete':'';
+  const b=document.createElement('button');b.type='button';if(i===index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');b.className=state.completed.has(i)?'complete':'';
   const numberEl=document.createElement('b');numberEl.textContent=state.completed.has(i)?'✓':number(i+1);
   const words=document.createElement('div');const h=document.createElement('strong');h.textContent=mission.short;const t=document.createElement('small');t.textContent=state.completed.has(i)?'SIMULATED ✓':'INVESTIGATE →';words.append(h,t);b.append(numberEl,words);
-  b.addEventListener('click',()=>{renderMission(i);document.getElementById('stage').scrollIntoView({behavior:'smooth',block:'center'})});
+  b.addEventListener('click',()=>{if(state.director.active)interruptDirectorForManualUse();renderMission(i);document.getElementById('stage').scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'})});
   $('missionSelector').append(b);
  });
  renderScore();
@@ -383,7 +419,7 @@ function simulateTest(){
   if(idx>=evaluations.length){
    const allPassed=receipt.checks.every(c=>c.pass);
    receipt.status=allPassed?'PASS':'FAIL';receipt.finishedAt=new Date().toISOString();
-   state.receipts.set(state.index,receipt);
+   state.receipts.set(state.index,receipt);state.testTimers=[];
    if(allPassed){
     state.completed.add(state.index);state.phase='passed';
     $('runTest').textContent='MOCK FIXTURE PASSED ✓';
@@ -420,23 +456,23 @@ function renderScore(){
 function refreshSelector(){document.querySelectorAll('#missionSelector button').forEach((b,i)=>{const finished=state.completed.has(i);b.classList.toggle('complete',finished);b.querySelector('b').textContent=finished?'✓':number(i+1);b.querySelector('small').textContent=finished?'SIMULATED ✓':'INVESTIGATE →'})}
 function advance(){
  if(state.phase==='choose'&&state.picked===missions[state.index].right)revealRepair();
- else if(state.phase==='repair')$('outcome').scrollIntoView({behavior:'smooth',block:'center'});
+ else if(state.phase==='repair')$('outcome').scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
  else if(state.phase==='passed'){
-   if(state.completed.size===3){$('conclusion').hidden=false;$('conclusion').scrollIntoView({behavior:'smooth',block:'start'});if(gsap&&!reduced)gsap.fromTo('#conclusion',{opacity:0,y:45},{opacity:1,y:0,duration:.9})}
+   if(state.completed.size===3){$('conclusion').hidden=false;$('conclusion').scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});if(gsap&&!reduced)gsap.fromTo('#conclusion',{opacity:0,y:45},{opacity:1,y:0,duration:.9})}
    else{
     const next=missions.findIndex((_,i)=>!state.completed.has(i));
-    renderMission(next<0?0:next);$('stage').scrollIntoView({behavior:'smooth',block:'center'});
+    renderMission(next<0?0:next);$('stage').scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
    }
  }
 }
 $('jumpToGame').addEventListener('click',()=>{stopDirector();$('stage').scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'})});
 $('watchDemo').addEventListener('click',startDirector);
-$('directorStop').addEventListener('click',stopDirector);
+$('directorStop').addEventListener('click',interruptDirectorForManualUse);
 $('copyReceipt').addEventListener('click',()=>{const r=state.receipts.get(state.index);if(r)copyText(formatReceipt(r),$('copyReceipt'))});
 $('shareSummary').addEventListener('click',()=>{const summary='FAILURE → PROOF — ITT TOLD’EM interactive concept\n3 simulated customer failure paths · owner-authorized repair plans · deterministic local mock acceptance checks.\nNo real client website is modified and no sales increase is claimed.\n'+location.href;copyText(summary,$('shareSummary'))});
-$('advance').addEventListener('click',advance);
-$('runTest').addEventListener('click',simulateTest);
-$('skip').addEventListener('click',()=>renderMission((state.index+1)%3));
+$('advance').addEventListener('click',()=>{if(state.director.active)interruptDirectorForManualUse();advance()});
+$('runTest').addEventListener('click',()=>{if(state.director.active)interruptDirectorForManualUse();simulateTest()});
+$('skip').addEventListener('click',()=>{if(state.director.active)interruptDirectorForManualUse();renderMission((state.index+1)%3)});
 $('replay').addEventListener('click',()=>{stopDirector();state.completed.clear();state.receipts.clear();$('conclusion').hidden=true;renderMission(0);window.scrollTo({top:0,behavior:'smooth'})});
 renderMission(0);
 window.__ITT_PUBLIC_DEMO__={getState:()=>({mission:state.index,phase:state.phase,completed:state.completed.size,receipts:state.receipts.size,directorActive:state.director.active,publicConcept:true,actualClientChanges:false}),runSyntheticChecks,formatReceipt,startDirector,stopDirector};
