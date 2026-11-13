@@ -1,0 +1,233 @@
+{
+  "runUtc": "2026-11-13T12:30:47.499Z",
+  "records": [
+    {
+      "name": "desktop",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": null
+      },
+      "on": {
+        "mode": "webgl2-studio",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 13,
+        "avgIntervalMs": 66.1,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": true,
+        "resolution": [
+          695,
+          206
+        ],
+        "error": null
+      },
+      "off": {
+        "mode": "css-fallback",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 17,
+        "avgIntervalMs": 185.3,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": [
+          695,
+          206
+        ],
+        "error": null
+      },
+      "errors": []
+    },
+    {
+      "name": "mobile",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": null
+      },
+      "on": {
+        "mode": "webgl2-studio",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 13,
+        "avgIntervalMs": 66.1,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": true,
+        "resolution": [
+          266,
+          113
+        ],
+        "error": null
+      },
+      "off": {
+        "mode": "css-fallback",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 17,
+        "avgIntervalMs": 81.2,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": [
+          266,
+          113
+        ],
+        "error": null
+      },
+      "errors": []
+    },
+    {
+      "name": "tiny",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": null
+      },
+      "on": {
+        "mode": "webgl2-studio",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 13,
+        "avgIntervalMs": 66.1,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": true,
+        "resolution": [
+          215,
+          113
+        ],
+        "error": null
+      },
+      "off": {
+        "mode": "css-fallback",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 15,
+        "avgIntervalMs": 68.7,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": [
+          215,
+          113
+        ],
+        "error": null
+      },
+      "errors": []
+    },
+    {
+      "name": "reduced",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": true,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": "reduced-motion requested"
+      },
+      "errors": []
+    },
+    {
+      "name": "unsupported",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": null
+      },
+      "denied": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": "Error: WebGL2 unavailable"
+      },
+      "errors": []
+    },
+    {
+      "name": "deep-link",
+      "initial": {
+        "mode": "css-fallback",
+        "backend": "none",
+        "drawnFrames": 0,
+        "avgIntervalMs": null,
+        "quality": 0,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": null,
+        "error": null
+      },
+      "on": {
+        "mode": "webgl2-studio",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 16,
+        "avgIntervalMs": 74.4,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": true,
+        "resolution": [
+          266,
+          113
+        ],
+        "error": null
+      },
+      "off": {
+        "mode": "css-fallback",
+        "backend": "WebGL2 analytic shader",
+        "drawnFrames": 20,
+        "avgIntervalMs": 91.6,
+        "quality": 0.8,
+        "reducedMotion": false,
+        "saveData": false,
+        "active": false,
+        "resolution": [
+          266,
+          113
+        ],
+        "error": null
+      },
+      "errors": []
+    }
+  ]
+}
