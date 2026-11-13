@@ -1,13 +1,15 @@
 {
   "files": {
-    "template.html": 77,
+    "template.html": 80,
     "style.css": 24,
-    "upgrade.css": 58,
+    "upgrade.css": 83,
     "app.js": 153,
     "upgrade_runtime.js": 157,
-    "build.py": 13
+    "visual-engine.js": 157,
+    "studio.frag": 117,
+    "build.py": 15
   },
-  "total_authored_physical_lines": 482,
-  "sha256": "70c58e4c223a5be821e52c025bc0157979c32c76ba7a0b0e71a32980c824a050",
-  "report_bytes": 106938
+  "total_authored_physical_lines": 786,
+  "sha256": "39a6f668d28c61f281b0488c52b212b5b792c74767a3111437b425810f41070b",
+  "report_bytes": 173048
 }
