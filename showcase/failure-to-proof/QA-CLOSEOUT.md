@@ -23,6 +23,10 @@
 | Blind owner/audience comprehension and conversion | Not tested with real participants | OPEN |
 | Live client implementation/revenue changes | None claimed | OUT OF SCOPE |
 
+### Independent clean-source rebuild
+
+An isolated AWS directory fetched the source files from immutable GitHub commit ce7b8b53567930730b6aca0c4bc7513899c763ca, checked the GSAP distribution SHA-256, rebuilt the demo and compared the entire output byte for byte with the published-author build. Both files have SHA-256 49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d (126,853 bytes). See qa/CLEAN-REBUILD-RECEIPT.json. Using a raw main-branch URL produced a stale cached version; immutable commit URLs avoid that ambiguity.
+
 ### Public preview performance (single headless Chrome measurements)
 
 - Desktop local first contentful paint: 656 ms.
