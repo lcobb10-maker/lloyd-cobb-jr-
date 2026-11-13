@@ -1,13 +1,13 @@
 # Failure to Proof — adversarial, per-source-line improvement and AI review
 
-Audit time: 2026-11-13T10:54:00.097189+00:00
+Audit time: 2026-11-13T11:14:21.868846+00:00
 Scope: each authored physical line in six canonical source files. Generated HTML is derived from these sources and is not counted twice. Minified vendored GSAP excluded; dependency risk assessed separately.
 
 ## Executive findings
 - P0: mock assertions rather than timer-only fake passes; previous repair retained and negative assertions verified.
 - P1: interrupted Director Cut previously risked zombie test completion; added explicit manual interruption and cancellation.
 - P1: no real-client security exposure or marketing outcome is claimed. Real deployment requires permission.
-- P2: accessibility bugs remain in clipboard fallback and aria-current; third-party font dependency and screen-reader testing remain open.
+- P2: clipboard fallback, mission aria-current, and mobile contrast defects repaired; manual screen-reader and physical Safari testing remain open.
 - AI belongs in evidence-limited offline review and design hypothesis generation. Do not add an LLM to a deterministic browser test or a public critical path.
 
 ## AI decision matrix
@@ -239,7 +239,7 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 36 | `});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 37 | `$('missionSelector').replaceChildren();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 38 | `missions.forEach((mission,i)=>{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
-| 39 | `const b=document.createElement('button');b.type='button';if(i===index)b.…` | P2 | Is aria-current correctly tokenized for accessibility? | AI can surface the semantic issue, but test DOM directly. | Open: currently uses true/false strings. |
+| 39 | `const b=document.createElement('button');b.type='button';if(i===index)b.…` | P2 | Is aria-current correctly tokenized for accessibility? | AI can surface the semantic issue, but test DOM directly. | REPAIRED: aria-current=step and matching CSS selector; axe/browser validated. |
 | 40 | `const numberEl=document.createElement('b');numberEl.textContent=state.co…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
 | 41 | `const words=document.createElement('div');const h=document.createElement…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
 | 42 | `b.addEventListener('click',()=>{if(state.director.active)interruptDirect…` | P2 | Does this handler conflict with autoplay, touch, keyboard, or earlier listeners? | AI can generate edge cases, then execute deterministic tests. | TEST |
@@ -424,7 +424,7 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 63 | `'Client authorization and actual live acceptance evidence remain require…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 64 | `].join('\n');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 65 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
-| 66 | `async function copyText(value,button){` | P2 | Can keyboard/mobile users dismiss fallback copying and recover focus? | No AI needed; accessible dialog and close control. | Open. |
+| 66 | `async function copyText(value,button){` | P2 | Can keyboard/mobile users dismiss fallback copying and recover focus? | No AI needed; accessible dialog and close control. | REPAIRED: close button, focus return, Escape and mobile interactions passed. |
 | 67 | `const original=button.textContent;` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
 | 68 | `try{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 69 | `if(!navigator.clipboard?.writeText)throw Error('Clipboard permission una…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
@@ -542,5 +542,3 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 - Run touch and reduced-motion tests on physical iPad Safari.
 - Verify new content version on publicly opened preview and record exact SHA256.
 - No background AI agent or continuous monitoring was installed as part of this one-time audit.
-
-[executed on device: ip-172-31-16-100 (50bc0c0a-54ae-4fd1-a42c-5555eeb267df)]
