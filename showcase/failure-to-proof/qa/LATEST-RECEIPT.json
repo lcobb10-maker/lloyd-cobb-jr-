@@ -1,0 +1,127 @@
+{
+  "schema": "ITT_ICM_QA_RECEIPT_V1",
+  "run_utc": "2026-11-13T11:11:15.358240+00:00",
+  "environment": "AWS t3-small / no GPU",
+  "scope": "public-safe Failure to Proof demonstration",
+  "source_sha256": {
+    "app.js": "ea3ae10c49f0f9104a486273a1dd29e9da033d0c155ffd0a4d133535156ef87e",
+    "upgrade_runtime.js": "281c77ccfe80234be6151f2a2e0c6abc8c308ea03a35eb4380db7b68ccc0aba2",
+    "template.html": "3f7b111c2a2037729b2e79f74cfe376d060e2fab91d85b0255924b43a39eafa3",
+    "style.css": "67f50987ef0347ef11d27fcc9954d629bb19a44d7a7a29c9750ab3f8393f7cf8",
+    "upgrade.css": "b1cebd10819ea46678c16d64da93429d452d11b1b17cf1c081f88fa23df4abd7",
+    "build.py": "a79b5f83c84b27ee7cd0387fc86ad668c3b80b111110224a4470e64cde1aad6a",
+    "gsap.min.js": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087",
+    "index.html": "49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d"
+  },
+  "pretest_source_sha256": {
+    "app.js": "ea3ae10c49f0f9104a486273a1dd29e9da033d0c155ffd0a4d133535156ef87e",
+    "upgrade_runtime.js": "281c77ccfe80234be6151f2a2e0c6abc8c308ea03a35eb4380db7b68ccc0aba2",
+    "template.html": "3f7b111c2a2037729b2e79f74cfe376d060e2fab91d85b0255924b43a39eafa3",
+    "style.css": "67f50987ef0347ef11d27fcc9954d629bb19a44d7a7a29c9750ab3f8393f7cf8",
+    "upgrade.css": "b1cebd10819ea46678c16d64da93429d452d11b1b17cf1c081f88fa23df4abd7",
+    "build.py": "a79b5f83c84b27ee7cd0387fc86ad668c3b80b111110224a4470e64cde1aad6a",
+    "gsap.min.js": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087",
+    "index.html": "49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d"
+  },
+  "source_unchanged": true,
+  "build_reproduced_same_hash": true,
+  "tests": [
+    {
+      "name": "source-app-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.049,
+      "log_path": "/home/ubuntu/itt-showcase/qa/source-app-syntax.log",
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "summary": ""
+    },
+    {
+      "name": "synthetic-qa-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.04,
+      "log_path": "/home/ubuntu/itt-showcase/qa/synthetic-qa-syntax.log",
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "summary": ""
+    },
+    {
+      "name": "build-syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.047,
+      "log_path": "/home/ubuntu/itt-showcase/qa/build-syntax.log",
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "summary": ""
+    },
+    {
+      "name": "reproducible-build",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 0.039,
+      "log_path": "/home/ubuntu/itt-showcase/qa/reproducible-build.log",
+      "log_sha256": "964f0384a7b9f3d26ce187086152b8b13b3f959281edd284aef075f4d3dddad5",
+      "summary": "built public-safe interactive demo: 126711 characters, no external JS dependency"
+    },
+    {
+      "name": "browser-css-rule-audit",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 1.367,
+      "log_path": "/home/ubuntu/itt-showcase/qa/browser-css-rule-audit.log",
+      "log_sha256": "5d2c43e4d3996a369c44fe1b1a2e2a7815f1c9d3b438d563406f77aba20e71a1",
+      "summary": "}"
+    },
+    {
+      "name": "wcag-automated",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 7.806,
+      "log_path": "/home/ubuntu/itt-showcase/qa/wcag-automated.log",
+      "log_sha256": "3236f824cc51ef14d1a14010550e009222d9213a50315d3cc29ad995cff7f9b5",
+      "summary": "AXE mobile-fallback VIOLATIONS 0 INCOMPLETE 2 PASSES 38"
+    },
+    {
+      "name": "three-size-browser-acceptance",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 16.305,
+      "log_path": "/home/ubuntu/itt-showcase/qa/three-size-browser-acceptance.log",
+      "log_sha256": "5c2500fc5dd37c88cc37566e4b21bfecf343a2f018a2d8930fd4a10326c11b69",
+      "summary": "SUITE_PASS small-mobile"
+    },
+    {
+      "name": "focus-and-clipboard",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 3.182,
+      "log_path": "/home/ubuntu/itt-showcase/qa/focus-and-clipboard.log",
+      "log_sha256": "3d9763709c8c4a0712363fc4a4f03b6bfac830ac1b0bb2758b2b3c36637af487",
+      "summary": "ACCESSIBILITY_PASS {\"aria\":[\"step\",null,null],\"copyFallback\":true,\"touchClose\":true,\"focusReturn\":true,\"escape\":true}"
+    },
+    {
+      "name": "director-vs-user-race",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 24.777,
+      "log_path": "/home/ubuntu/itt-showcase/qa/director-vs-user-race.log",
+      "log_sha256": "da596b32a23c9f2cdca0a952254c7c599b93e83d9a44bd23914c55dc7621473e",
+      "summary": "ADVERSARIAL_RACE_TEST_PASS"
+    },
+    {
+      "name": "20-second-director-demo",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 23.188,
+      "log_path": "/home/ubuntu/itt-showcase/qa/20-second-director-demo.log",
+      "log_sha256": "f6ce3643b6f0b70f3e3350a21fd5256970d5b6448b8eb0a4c437d664ce5f06c2",
+      "summary": "DIRECTOR_CUT_20S_PASS {\"state12\":{\"phase\":\"testing\",\"overlay\":true,\"caption\":\"NOW VERIFY THE CLAIM.\",\"log\":3},\"state21\":{\"phase\":\"passed\",\"overlay\":false,\"completed\":1,\"log\":3},\"errors\":[]}"
+    }
+  ],
+  "overall": "PASS",
+  "ai_provider_test": "NOT_RUN; optional AI may suggest tests but cannot override evidence",
+  "limits": [
+    "Automated browser emulation is not physical Safari testing",
+    "No owner or blind audience research was performed",
+    "Synthetic fixture pass does not establish a live customer or security outcome"
+  ]
+}
