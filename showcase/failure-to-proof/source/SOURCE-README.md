@@ -14,6 +14,11 @@ Expected SHA-256 of the approved distribution:
 
   28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087
 
+The builder additionally reads `studio.frag` and `visual-engine.js` and
+embeds their source into the single HTML file. No real-time rendering framework
+or external 3D library is fetched. The shader is compiled only after the
+visitor explicitly selects **Cinematic 3D** (or opens a cinematic deep link).
+
 Then execute:
 
   python3 build.py
@@ -37,3 +42,21 @@ Code edits are checked against actual tests, never counted as success merely bec
 Physical iPad Safari verification, actual human comprehension research, real owner consent, and verified post-deployment business outcomes cannot be completed by a browser emulator.
 
 See the parent QA-CLOSEOUT.md and the main line audit reports in this showcase folder.
+
+
+## Visual and data-loading budgets
+
+- **Lite by default:** no WebGL shader compilation or GPU work before the user opts in.
+- **Cinematic option:** actual WebGL2 procedural spatial scene with metallic shading,
+  studio architecture, highlights and a reflective floor. Its renderer lowers
+  internal resolution or reverts to the CSS illustration on weak frame pacing.
+- **Data saving:** Save-Data and reduced-motion settings keep the Lite fallback.
+- **Background:** pauses GPU frames while the stage or browser is not visible.
+- **No new textures/media:** geometry and material appearance are procedural
+  shader code. This is not photogrammetry or AAA asset fidelity.
+- **Typography:** custom Google Fonts load nonblocking with system-font fallback;
+  this improves first meaningful paint while the type treatment can refine later.
+- **Data fetching:** demo scenarios and mock acceptance fixtures are local static
+  content; there is no live client API to accelerate.
+- **Evidence:** see FIDELITY-SPEED-REPORT.md for lab comparison and limits.
+- Browser screenshots and simulated WebGL do not establish physical iPad Safari FPS.
