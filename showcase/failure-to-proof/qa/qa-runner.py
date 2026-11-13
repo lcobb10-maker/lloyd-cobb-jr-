@@ -20,8 +20,9 @@ TESTS=[
  ('focus-and-clipboard',['node',str(ROOT/'accessibility-smoke.cjs')],55),
  ('director-vs-user-race',['node',str(ROOT/'adversarial-race-test.cjs')],60),
  ('20-second-director-demo',['node',str(ROOT/'director-end-to-end.cjs')],65),
+ ('opt-in-webgl2-and-lite-fallback',['node',str(ROOT/'visual-qa.cjs')],90),
 ]
-FILES=['app.js','upgrade_runtime.js','template.html','style.css','upgrade.css','build.py','gsap.min.js','index.html']
+FILES=['app.js','upgrade_runtime.js','visual-engine.js','studio.frag','template.html','style.css','upgrade.css','build.py','gsap.min.js','index.html']
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def run():
  started=datetime.datetime.now(datetime.timezone.utc).isoformat()
