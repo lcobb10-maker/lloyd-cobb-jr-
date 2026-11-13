@@ -9,15 +9,17 @@
 
 | Gate | Result | Artifact |
 | --- | --- | --- |
-| First-party physical source-line review | 482/482 reviewed | EVERY-LINE-AI-AUDIT.md |
-| Browser-resolved stylesheet coverage | 271 rules, 2,488 declarations reviewed | CSS-DECLARATION-AUDIT.md |
+| First-party physical source-line review | 786/786 reviewed | EVERY-LINE-AI-AUDIT.md |
+| Browser-resolved stylesheet coverage | 289 rules, 2,633 declarations reviewed | CSS-DECLARATION-AUDIT.md |
 | CSS duplicate/override inventory | 20 overlapping properties reviewed | qa/css-audit.json |
 | Mobile selector contrast and selected-state mismatch | Repaired; automated retest passed | qa/a11y-axe.json |
 | WCAG 2A/2AA automated checks | Zero violations in four tested states; 2 incomplete/manual categories each | qa/a11y-axe.json |
 | Director Cut and user-interruption race | Repaired; adversarial test passed | qa/director-vs-user-race.log |
 | Keyboard/touch receipt fallback | Repaired; focus return, Escape and tap close tested | qa/focus-and-clipboard.log |
 | Live mock assertions | Positive and negative fixtures exercised | qa/three-size-browser-acceptance.log |
-| Deterministic full QA release gate | 10 of 10 checks passed, build reproduced same SHA256 | qa/LATEST-RECEIPT.json |
+| Deterministic full QA release gate | 11 of 11 checks passed, build reproduced same SHA256 | qa/LATEST-RECEIPT.json |
+| Optional 3D quality & low-data fallback | Lite initial GPU 0; WebGL2 opt-in, opt-out, unsupported, reduced motion and direct link passed | qa/visual-modes.json |
+| Speed and fidelity comparison | Throttled Chrome local median first paint 592 ms → 400 ms; gzip estimate grows ~5.1 KB | FIDELITY-SPEED-REPORT.md |
 | Optional AI review agent | Safe request/response contract tested with local mock; no real model endpoint called | ai-qa-review.py |
 | Real iPad Safari | Not tested on physical hardware | OPEN |
 | Blind owner/audience comprehension and conversion | Not tested with real participants | OPEN |
@@ -25,7 +27,21 @@
 
 ### Independent clean-source rebuild
 
-An isolated AWS directory fetched the source files from immutable GitHub commit ce7b8b53567930730b6aca0c4bc7513899c763ca, checked the GSAP distribution SHA-256, rebuilt the demo and compared the entire output byte for byte with the published-author build. Both files have SHA-256 49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d (126,853 bytes). See qa/CLEAN-REBUILD-RECEIPT.json. Using a raw main-branch URL produced a stale cached version; immutable commit URLs avoid that ambiguity.
+An isolated AWS directory fetched the authored sources from immutable GitHub commit 8045ddb32120675210f090952e4f3fe8e2d5bb70, verified the approved GSAP SHA-256, rebuilt the HTML, and compared the complete output with the tested AWS build. The SHA-256 matched d142d6fbda1a2909e2e1c847bc7ed8dc98758a3bc79dedbc5124526bc60285d9 (141,132 bytes). The immutable source URL avoids stale cache ambiguities.
+
+### Local throttled before/after fidelity test
+
+- Baseline median FCP/LCP 592 ms; candidate 400 ms across three alternate-order local Chrome samples per version under slow 4G simulation and 4× CPU throttle. See qa/ab-network.json.
+- The new design uses zero GPU resources by default; optional WebGL2 procedural studio requires a visitor opt-in and has adaptive frame-pacing fallback.
+- New compressed payload estimate is 50,837 bytes versus 45,736 bytes previously. There is a bandwidth cost, but first paint improves in this local experiment.
+- These numbers are lab measurements, not production visitor metrics or real iPad GPU figures.
+
+### Public cinematic mode acceptance
+
+- Immutable GitHub preview was opened in desktop, mobile, 320 px, reduced-motion, deliberately unavailable-WebGL2 and direct `#cinematic=1` modes.
+- Mode toggling, fallback and zero further frames after opting out passed in the public browser checks.
+- A bare GitHub preview query parameter previously broke the deep link; a URL-fragment flag corrects this.
+- The optional shader models real geometry but is not photogrammetry or a verified AAA asset pipeline.
 
 ### Public preview performance (single headless Chrome measurements)
 
@@ -75,7 +91,7 @@ Run only with an approved, configured inference endpoint and its explicitly supp
 
 ### Shareable link
 
-https://htmlpreview.github.io/?https://github.com/lcobb10-maker/lloyd-cobb-jr-/blob/main/showcase/failure-to-proof/index.html
+https://htmlpreview.github.io/?https://github.com/lcobb10-maker/lloyd-cobb-jr-/blob/8045ddb32120675210f090952e4f3fe8e2d5bb70/showcase/failure-to-proof/index.html
 
 ### Deployment ethics
 
