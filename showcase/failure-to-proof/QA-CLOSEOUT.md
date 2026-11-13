@@ -53,6 +53,17 @@ An isolated AWS directory fetched the authored sources from immutable GitHub com
 - These are lab measurements from one AWS headless session, not CrUX field data or physical Safari.
 - No horizontal overflow on 320 px, 390 px or desktop acceptance paths.
 
+### Final immutable public-preview measurement
+
+- Release source: `8045ddb32120675210f090952e4f3fe8e2d5bb70`.
+- Published preview mobile Chrome FCP/LCP **288 ms** standard lab network
+  and **552 ms** under one simulated slow-4G/four-times-CPU run.
+- CLS **0** in both measured public runs; no horizontal overflow or JS errors.
+- The public optional WebGL2 route, unsupported fallback, reduced motion and
+  `#cinematic=1` deep link passed. No physical Safari performance is claimed.
+- See `qa/performance.json`, `qa/visual-modes.json`, and
+  `qa/CINEMATIC-CLEAN-REBUILD.json`.
+
 ### AI decision: use where it improves the outcome
 
 The optional AI challenger receives **only curated QA statistics**, not raw private client data. It can return hypotheses for an independent reviewer to examine. It cannot write source, deploy, approve a release, contact prospects, or turn a synthetic PASS into client evidence. By default it makes no network requests.
