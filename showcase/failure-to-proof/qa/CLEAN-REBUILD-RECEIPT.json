@@ -1,0 +1,14 @@
+{
+  "schema": "ITT_PUBLIC_DEMO_CLEAN_REBUILD_V1",
+  "date_utc": "2026-11-13T11:26:05.056144+00:00",
+  "source_git_commit": "ce7b8b53567930730b6aca0c4bc7513899c763ca",
+  "build_source": "GitHub immutable commit source files downloaded to isolated AWS /tmp directory",
+  "gsap_core_version": "3.12.5",
+  "gsap_sha256": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087",
+  "clean_artifact_sha256": "49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d",
+  "aws_author_sha256": "49b45f00391d14d48a265f2cd653cc3fcda1e2d01697f80020c4bbbfa520fd8d",
+  "bytes": 126853,
+  "exact_bytes_equal": true,
+  "result": "PASS",
+  "scope": "generic public simulation, no client production changes"
+}
