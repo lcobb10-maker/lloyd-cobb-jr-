@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050910">
+<meta name="description" content="A 60-second interactive challenge: find the customer friction, choose the repair, and run real checks against simulated fixtures. Built by ITT TOLD’EM.">
+<title>Failure → Proof | ITT TOLD'EM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>/*BUILD_CSS*/</style>
+</head>
+<body>
+<main class="shell">
+<header class="mast">
+ <div class="identity"><div class="emblem">I<span>T</span></div><div><b>ITT TOLD'EM</b><small>EXPERIENCE ENGINEERING</small></div></div>
+ <div class="build-status"><i></i> INTERACTIVE CONCEPT · NO LIVE CLIENT DATA</div>
+ <a class="site-link" href="https://ittoldem.com/" target="_blank" rel="noopener noreferrer">THE HOUSE <span>↗</span></a>
+</header>
+<section class="intro">
+ <div class="eyebrow"><span class="orbit">✳</span> EXPERIENCE 001 <span class="slash">/</span> RED TEAM × BUILD TEAM</div>
+ <h1>FIND THE FRICTION.<br><em>PLAY THE REPAIR.</em></h1>
+ <p>One customer gets stuck. You diagnose the problem, choose what matters, and watch a test prove whether the proposed fix works.</p>
+ <div class="hero-actions"><button id="jumpToGame" class="button-primary">PLAY THE 3-MISSION CHALLENGE <span>↘</span></button><button id="watchDemo" class="button-watch" aria-pressed="false">▶ WATCH THE DIRECTOR CUT</button><span>NO LIVE CLIENT DATA OR CLAIMS.</span></div>
+ <div class="intro-footer"><span><span class="pulse"></span> BUILT FOR BUSINESS OWNERS, NOT DEVELOPERS</span><span>3 MICRO-MISSIONS · ABOUT 60 SECONDS</span></div>
+</section>
+<section class="experience" aria-label="Interactive business-repair simulation">
+ <div class="experience-toolbar">
+  <div class="exp-label"><span>01 — CUSTOMER JOURNEY</span><b id="missionTitle">THE DEAD END</b></div>
+  <div class="tracking"><span id="missionCounter">MISSION 01 / 03</span><span class="progress-rail"><span id="progressFill"></span></span><span id="scoreText">0 / 3 REVIEWED</span></div>
+ </div>
+ <div class="simulation-stage" id="stage">
+  <div class="stage-fog" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
+  <div class="left-stage-label">REAL EXPERIENCE / HYPOTHETICAL SCENARIO</div>
+  <div class="right-stage-label" id="stageResult">SIMULATION RUNNING</div>
+  <div class="scene-container">
+   <div class="glass-browser" id="browserArt">
+    <div class="browser-chrome"><div class="dots"><i></i><i></i><i></i></div><div class="address" id="urlBox">example.studio/about-old</div><div class="padlock">SIM</div></div>
+    <div class="browser-content">
+     <div class="browser-brand"><span class="logo-box">A</span> AN EXAMPLE BUSINESS <span class="no-real">DEMO</span></div>
+     <div class="visual-scene" id="visualScene"><div class="shine"></div><div class="visual-orb" id="visualOrb" aria-hidden="true"><div class="orb-core"></div><div class="orb-ring"></div><div id="missionGlyph" class="mission-glyph">↗</div></div><div class="film-beam"></div><div class="plate-small"><span>EXPERIENCE</span><strong id="screenHeading">404</strong><small id="screenSub">The page couldn't be found.</small></div></div>
+     <div class="browser-foot"><div class="foot-line"></div><div class="foot-line short"></div><div class="foot-button" id="footButton">REQUEST A PROJECT ↗</div></div>
+    </div>
+   </div>
+   <div class="artifact artifact-top" aria-hidden="true"><span>TRACE ID</span><strong>UC / 001</strong></div>
+   <div class="artifact artifact-bottom" aria-hidden="true"><span>PATH STATUS</span><strong id="artifactState">BROKEN</strong></div>
+  </div>
+  <div id="directorOverlay" class="director-overlay" hidden aria-live="polite"><div class="director-top"><span>◉ THE DIRECTOR CUT</span><span id="directorTime">00:00 / 00:20</span></div><div class="director-message"><b id="directorTitle">THE CUSTOMER HITS A WALL</b><p id="directorBody">Watch a repair move from proposal to mock acceptance evidence.</p></div><div class="director-bar"><div id="directorBar"></div></div><button id="directorStop" type="button">✕ EXIT CUT</button></div><div class="mission-callout" id="callout"><span class="callout-overline" id="calloutLabel">RED TEAM FINDS THE FRICTION</span><strong id="calloutTitle">A customer follows a dead link.</strong><p id="calloutBody">That journey ends before the buyer reaches the service or contact page.</p></div>
+ </div>
+ <div class="interaction">
+  <div class="interaction-top"><div><span class="section-kicker">YOUR MOVE</span><h2 id="question">What would you do first?</h2><p id="guidance">Choose the action that directly addresses the customer failure.</p></div><div class="timer"><span>01</span><small>DIAGNOSE<br>REPAIR<br>VERIFY</small></div></div>
+  <div class="choices" id="choices"></div>
+  <div class="feedback" id="feedback" role="status" aria-live="polite">Select one action to run the reverse-parallel test.</div>
+  <div class="action-bar"><button class="button-primary" id="advance" disabled>CHOOSE A REPAIR FIRST <span>→</span></button><button class="button-secondary" id="skip">CHANGE MISSION <span>↗</span></button></div>
+  <div class="outcome" id="outcome" hidden>
+   <div class="outcome-header"><span class="section-kicker">WHAT PROVES THIS WORKED?</span><span id="outcomeBadge">NOT YET IMPLEMENTED</span></div>
+   <p id="outcomeDetail"></p>
+   <div class="outcome-steps"><div><span>01</span><strong>PROBLEM</strong><p id="outcomeProblem"></p></div><div><span>02</span><strong>INTERVENTION</strong><p id="outcomeRepair"></p></div><div><span>03</span><strong>RELEASE GATE</strong><p id="outcomeTest"></p></div></div>
+   <button id="runTest" class="button-proof">▶ SIMULATE ACCEPTANCE TEST</button>
+   <div id="testStatus" role="status" aria-live="polite"></div><ol id="testLog" class="test-log" aria-label="Checks run against mock data" hidden></ol><div id="executionPlan" class="execution-plan" hidden><strong>HOW THIS REACHES PRODUCTION</strong><div class="plan-grid"><div><b>01 / OWNER</b><p id="planOwner"></p></div><div><b>02 / BUILD</b><p id="planBuild"></p></div><div><b>03 / RELEASE</b><p id="planRelease"></p></div></div><p class="plan-caveat">This preview tests local synthetic fixtures only. Actual outcomes require owner permission and verified production evidence.</p></div><button id="copyReceipt" class="button-copy" type="button" disabled>⌁ COPY TEST RECEIPT</button>
+  </div>
+ </div>
+ <div class="mission-selector" id="missionSelector" aria-label="Select a mission"></div>
+</section>
+<section class="conclusion" id="conclusion" hidden>
+ <div class="conclusion-icon">✳</div><div class="section-kicker">DEBRIEF / 03 OF 03</div>
+ <h2>THE REAL PRODUCT<br>ISN'T THE ANIMATION.<br><em>IT'S THE PROOF.</em></h2>
+ <p>We trace where a customer journey might fail, design an appropriate response, and define the acceptance test before any real deployment. A live client's results require their approval and actual measurements.</p>
+ <div class="conclusion-counters"><div><b>03</b><span>SIMULATED FAILURE PATHS</span></div><div><b>03</b><span>PROPOSED REMEDIATIONS</span></div><div><b>03</b><span>TESTABLE RELEASE GATES</span></div></div>
+ <div class="conclusion-actions"><button class="button-primary" id="replay">REPLAY THE EXPERIENCE ↻</button><button class="button-proof" id="shareSummary">COPY THE DEMO SUMMARY ↗</button><a class="button-secondary" href="https://ittoldem.com/" target="_blank" rel="noopener noreferrer">EXPLORE THE HOUSE ↗</a></div>
+</section>
+<footer class="footer"><span>DESIGN + ENGINEERING + VERIFIABLE OUTCOMES</span><span>PUBLIC CONCEPT · NOT A CLAIM ABOUT A NAMED CLIENT · NO LIVE WEBSITE CHANGES</span><span>© ITT TOLD'EM</span></footer>
+</main>
+<script>/*BUILD_GSAP*/</script>
+<script>/*BUILD_APP*/</script>
+</body></html>
