@@ -1,0 +1,23 @@
+{
+  "schema": "ITT_PUBLIC_DEMO_CINEMATIC_CLEAN_REBUILD_V2",
+  "date_utc": "2026-11-13T12:29:53.220174+00:00",
+  "source_git_commit": "8045ddb32120675210f090952e4f3fe8e2d5bb70",
+  "files": [
+    "template.html",
+    "app.js",
+    "upgrade_runtime.js",
+    "visual-engine.js",
+    "studio.frag",
+    "style.css",
+    "upgrade.css",
+    "build.py",
+    "gsap.min.js"
+  ],
+  "gsap_core_version": "3.12.5",
+  "gsap_sha256": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087",
+  "artifact_sha256": "d142d6fbda1a2909e2e1c847bc7ed8dc98758a3bc79dedbc5124526bc60285d9",
+  "file_bytes": 141132,
+  "exact_binary_match": true,
+  "result": "PASS",
+  "limits": "No physical Safari or customer business proof"
+}
