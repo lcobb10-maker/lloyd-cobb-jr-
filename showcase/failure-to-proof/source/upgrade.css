@@ -56,3 +56,28 @@
  .plan-grid p{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.visual-orb{animation:none!important}}
+
+/* Low-cost cinematic background. The existing functional mock browser stays legible in front. */
+.simulation-stage>.spatial-render{z-index:0;pointer-events:none}
+.simulation-stage>.stage-grid{z-index:1;opacity:.26}
+.simulation-stage>.stage-fog{z-index:1;opacity:.32}
+.simulation-stage>.scene-container{z-index:2}
+.simulation-stage .mission-callout{z-index:5}
+@media(prefers-reduced-motion:reduce){.simulation-stage>.stage-grid{opacity:.48}.simulation-stage>.stage-fog{opacity:1}}
+
+/* The physically inspired GPU scene replaces only the illustration inside the browser,
+   never its factual text, action controls, accessibility tree, or CSS fallback. */
+.visual-scene>.spatial-render{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.visual-scene .plate-small{z-index:3}
+.visual-scene .visual-orb{z-index:1}
+.visual-scene .shine,.visual-scene .film-beam{z-index:2;pointer-events:none}
+
+/* Explicit high-fidelity choice: zero WebGL work on default and data-saving path. */
+.quality-toggle{position:absolute;z-index:9;right:20px;top:37px;border:1px solid #d3b889;background:#091e2cdd;color:#ffe1aa;padding:7px 11px;font:800 9px 'Space Grotesk',system-ui,sans-serif;letter-spacing:.07em;min-height:34px;backdrop-filter:blur(7px)}
+.quality-toggle[aria-pressed=true]{border-color:#79d6c1;color:#c2f1e4;background:#13372fdb}
+.quality-toggle:disabled{opacity:.7;cursor:not-allowed}
+@media(max-width:540px){.quality-toggle{top:26px;right:9px;padding:5px 8px;min-height:29px;font-size:8px}}
+/* Show actual 3D material, not a full-width text plate disguising the rendering. */
+.visual-scene .plate-small{right:3%;width:37%;padding:16px;background:linear-gradient(145deg,#061420eb,#091924d9);border:1px solid #9eb3b48c;box-shadow:0 14px 45px #0008}
+.visual-scene .plate-small strong{text-shadow:0 2px 14px #ffffff10}
+@media(max-width:540px){.visual-scene .plate-small{width:46%;right:3%;padding:9px;top:17%}}
