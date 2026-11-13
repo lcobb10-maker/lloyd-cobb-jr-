@@ -1,5 +1,5 @@
 const puppeteer=require('/home/ubuntu/.npm/_npx/4b4c857f6efdfb61/node_modules/puppeteer'),fs=require('fs');
-const PUBLIC='https://htmlpreview.github.io/?https://github.com/lcobb10-maker/lloyd-cobb-jr-/blob/main/showcase/failure-to-proof/index.html';
+const PUBLIC=process.env.ITT_PUBLIC_URL||'https://htmlpreview.github.io/?https://github.com/lcobb10-maker/lloyd-cobb-jr-/blob/main/showcase/failure-to-proof/index.html';
 const LOCAL='file:///home/ubuntu/itt-showcase/public/index.html';
 (async()=>{
 const b=await puppeteer.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
