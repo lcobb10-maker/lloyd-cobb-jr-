@@ -8,7 +8,8 @@
 <title>Failure → Proof | ITT TOLD'EM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>/*BUILD_CSS*/</style>
 </head>
 <body>
@@ -31,6 +32,7 @@
   <div class="tracking"><span id="missionCounter">MISSION 01 / 03</span><span class="progress-rail"><span id="progressFill"></span></span><span id="scoreText">0 / 3 REVIEWED</span></div>
  </div>
  <div class="simulation-stage" id="stage">
+  <button id="qualityToggle" class="quality-toggle" type="button" aria-pressed="false" title="Enable optional real-time 3D studio rendering">✦ CINEMATIC 3D</button>
   <div class="stage-fog" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
   <div class="left-stage-label">REAL EXPERIENCE / HYPOTHETICAL SCENARIO</div>
   <div class="right-stage-label" id="stageResult">SIMULATION RUNNING</div>
@@ -74,4 +76,5 @@
 </main>
 <script>/*BUILD_GSAP*/</script>
 <script>/*BUILD_APP*/</script>
+<script>/*BUILD_VISUAL*/</script>
 </body></html>
