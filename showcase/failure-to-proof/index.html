@@ -8,7 +8,8 @@
 <title>Failure → Proof | ITT TOLD'EM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{--bg:#070a0d;--cream:#f4f1e9;--muted:#9aadb7;--dim:#70838c;--gold:#ffcc8f;--teal:#7de0d3;--red:#ff887d;--surface:#0e1820;--edge:#334553}*{box-sizing:border-box}
 html{background:var(--bg);scroll-behavior:smooth}body{margin:0;color:var(--cream);font:14px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
@@ -92,6 +93,31 @@ html{background:var(--bg);scroll-behavior:smooth}body{margin:0;color:var(--cream
  .plan-grid p{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.visual-orb{animation:none!important}}
+
+/* Low-cost cinematic background. The existing functional mock browser stays legible in front. */
+.simulation-stage>.spatial-render{z-index:0;pointer-events:none}
+.simulation-stage>.stage-grid{z-index:1;opacity:.26}
+.simulation-stage>.stage-fog{z-index:1;opacity:.32}
+.simulation-stage>.scene-container{z-index:2}
+.simulation-stage .mission-callout{z-index:5}
+@media(prefers-reduced-motion:reduce){.simulation-stage>.stage-grid{opacity:.48}.simulation-stage>.stage-fog{opacity:1}}
+
+/* The physically inspired GPU scene replaces only the illustration inside the browser,
+   never its factual text, action controls, accessibility tree, or CSS fallback. */
+.visual-scene>.spatial-render{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.visual-scene .plate-small{z-index:3}
+.visual-scene .visual-orb{z-index:1}
+.visual-scene .shine,.visual-scene .film-beam{z-index:2;pointer-events:none}
+
+/* Explicit high-fidelity choice: zero WebGL work on default and data-saving path. */
+.quality-toggle{position:absolute;z-index:9;right:20px;top:37px;border:1px solid #d3b889;background:#091e2cdd;color:#ffe1aa;padding:7px 11px;font:800 9px 'Space Grotesk',system-ui,sans-serif;letter-spacing:.07em;min-height:34px;backdrop-filter:blur(7px)}
+.quality-toggle[aria-pressed=true]{border-color:#79d6c1;color:#c2f1e4;background:#13372fdb}
+.quality-toggle:disabled{opacity:.7;cursor:not-allowed}
+@media(max-width:540px){.quality-toggle{top:26px;right:9px;padding:5px 8px;min-height:29px;font-size:8px}}
+/* Show actual 3D material, not a full-width text plate disguising the rendering. */
+.visual-scene .plate-small{right:3%;width:37%;padding:16px;background:linear-gradient(145deg,#061420eb,#091924d9);border:1px solid #9eb3b48c;box-shadow:0 14px 45px #0008}
+.visual-scene .plate-small strong{text-shadow:0 2px 14px #ffffff10}
+@media(max-width:540px){.visual-scene .plate-small{width:46%;right:3%;padding:9px;top:17%}}
 </style>
 </head>
 <body>
@@ -114,6 +140,7 @@ html{background:var(--bg);scroll-behavior:smooth}body{margin:0;color:var(--cream
   <div class="tracking"><span id="missionCounter">MISSION 01 / 03</span><span class="progress-rail"><span id="progressFill"></span></span><span id="scoreText">0 / 3 REVIEWED</span></div>
  </div>
  <div class="simulation-stage" id="stage">
+  <button id="qualityToggle" class="quality-toggle" type="button" aria-pressed="false" title="Enable optional real-time 3D studio rendering">✦ CINEMATIC 3D</button>
   <div class="stage-fog" aria-hidden="true"></div><div class="stage-grid" aria-hidden="true"></div>
   <div class="left-stage-label">REAL EXPERIENCE / HYPOTHETICAL SCENARIO</div>
   <div class="right-stage-label" id="stageResult">SIMULATION RUNNING</div>
@@ -478,4 +505,161 @@ renderMission(0);
 window.__ITT_PUBLIC_DEMO__={getState:()=>({mission:state.index,phase:state.phase,completed:state.completed.size,receipts:state.receipts.size,directorActive:state.director.active,publicConcept:true,actualClientChanges:false}),runSyntheticChecks,formatReceipt,startDirector,stopDirector};
 })();
 </script>
+<script>/* ITT cinematic studio — additive, no network, WebGL2 with CSS fallback.
+   An actual analytic 3D render, not a claim of photogrammetry or live client assets.
+   Quality auto-scales; stops offscreen; respects reduced motion/data usage.
+*/
+(()=>{
+'use strict';
+const stage=document.getElementById('stage');
+const surface=document.getElementById('visualScene');
+const cssOrb=document.getElementById('visualOrb');
+if(!stage||!surface)return;
+const toggle=document.getElementById('qualityToggle');
+if(!toggle)return;
+let lifecycle=null,initialized=false;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const saveData=!!navigator.connection?.saveData;
+const metrics={mode:'css-fallback',backend:'none',drawnFrames:0,avgIntervalMs:null,quality:0,reducedMotion:reduced,saveData,active:false,resolution:null,error:null};
+window.__ITT_VISUAL_METRICS__=metrics;
+if(reduced||saveData){
+ metrics.error=reduced?'reduced-motion requested':'save-data requested';
+ toggle.disabled=true;toggle.textContent=reduced?'LITE · REDUCED MOTION':'LITE · DATA SAVER';return;
+}
+let gl=null,canvas=null,program=null;
+function initialize(){
+try{
+ canvas=document.createElement('canvas');canvas.className='spatial-render';
+ canvas.setAttribute('aria-hidden','true');
+ canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity .65s ease';
+ surface.insertBefore(canvas,surface.firstChild);
+ gl=canvas.getContext('webgl2',{antialias:false,alpha:false,depth:false,stencil:false,preserveDrawingBuffer:false,powerPreference:'low-power'});
+ if(!gl)throw Error('WebGL2 unavailable');
+ const vertex='#version 300 es\nprecision highp float;\nvoid main(){vec2 p=vec2((gl_VertexID<<1)&2,gl_VertexID&2);gl_Position=vec4(p*2.-1.,0.,1.);}';
+ const frag="#version 300 es\nprecision highp float;\nout vec4 fragColor;\nuniform vec2 uResolution;\nuniform float uTime,uRepaired,uScene;\nuniform vec2 uPointer;\n#define STEPS 54\n#define MAX_DIST 24.\nfloat sdBox(vec3 p,vec3 b){vec3 q=abs(p)-b;return length(max(q,0.))+min(max(q.x,max(q.y,q.z)),0.);}\nfloat sdTorus(vec3 p,vec2 t){return length(vec2(length(p.xy)-t.x,p.z))-t.y;}\nvec2 nearest(vec2 a,vec2 b){return a.x<b.x?a:b;}\nvec2 world(vec3 p){\n vec2 d=vec2(p.y+1.58,1.);\n d=nearest(d,vec2(sdBox(p-vec3(0.,3.2,4.),vec3(9.,.09,12.)),2.));\n d=nearest(d,vec2(sdBox(p-vec3(0.,-.10,7.2),vec3(9.,3.,.13)),2.));\n vec3 side=p;side.x=abs(side.x)-3.4;\n d=nearest(d,vec2(sdBox(side-vec3(0.,.55,3.0),vec3(.16,2.1,.24)),3.));\n d=nearest(d,vec2(sdBox(side-vec3(0.,2.2,3.0),vec3(.42,.09,1.8)),3.));\n vec3 q=p-vec3(-.73,-.16,1.35);\n d=nearest(d,vec2(length(q)-.86,4.));\n d=nearest(d,vec2(sdTorus(q,vec2(1.12,.073)),5.));\n q.xz=mat2(.79,-.613,.613,.79)*q.xz;\n d=nearest(d,vec2(sdTorus(q,vec2(1.21,.031)),6.));\n d=nearest(d,vec2(sdBox(p-vec3(-.73,-1.32,1.35),vec3(1.15,.22,1.11)),3.));\n d=nearest(d,vec2(sdBox(p-vec3(-.73,2.58,1.35),vec3(2.8,.05,.09)),5.));\n return d;\n}\nvec3 calcNormal(vec3 p){\n vec2 e=vec2(.004,0.);\n return normalize(vec3(world(p+e.xyy).x-world(p-e.xyy).x,\n world(p+e.yxy).x-world(p-e.yxy).x,\n world(p+e.yyx).x-world(p-e.yyx).x));\n}\nfloat ao(vec3 p,vec3 n){\n float a=0.,scale=1.;\n for(int i=1;i<=3;i++){\n  float h=.09*float(i);\n  a+=(h-world(p+n*h).x)*scale;\n  scale*=.65;\n }\n return clamp(1.-a*2.0,.48,1.);\n}\nfloat shadow(vec3 p,vec3 lightDir){\n float s=1.,t=.08;\n for(int i=0;i<11;i++){\n  float h=world(p+lightDir*t).x;\n  s=min(s,10.*h/t);\n  t+=clamp(h,.08,.40);\n  if(h<.008||t>4.)break;\n }\n return clamp(s,.25,1.);\n}\nvec3 material(float id,vec3 p){\n if(id<1.5){\n  vec2 tile=fract(p.xz*.29);\n  float seams=smoothstep(.965,.995,max(tile.x,tile.y));\n  float m=sin(p.x*2.6+p.z*.44+1.3*sin(p.z*1.1));\n  return mix(vec3(.041,.075,.092),vec3(.105,.15,.176),.47+.24*m)*(1.-.22*seams);\n }\n if(id<2.5)return vec3(.05,.068,.08);\n if(id<3.5)return vec3(.24,.24,.225);\n if(id<4.5)return uScene<.5?vec3(.22,.37,.42):(uScene<1.5?vec3(.18,.20,.31):vec3(.17,.37,.31));\n if(id<5.5)return mix(vec3(.56,.31,.11),vec3(.97,.75,.38),uRepaired*.4);\n return vec3(.48,.57,.65);\n}\nvoid main(){\n vec2 uv=(gl_FragCoord.xy-.5*uResolution)/uResolution.y;\n vec3 ro=vec3(uPointer.x*.13,.55+uPointer.y*.09,-5.9);\n vec3 target=vec3(.42,-.2,1.45);\n vec3 forward=normalize(target-ro);\n vec3 right=normalize(cross(vec3(0.,1.,0.),forward));\n vec3 up=cross(forward,right);\n vec3 rd=normalize(uv.x*right+uv.y*up+forward*1.35);\n vec3 bg=mix(vec3(.009,.023,.043),vec3(.061,.087,.101),clamp(uv.y+.46,0.,1.));\n float travel=0.,id=-1.;\n for(int i=0;i<STEPS;i++){\n  vec2 h=world(ro+rd*travel);\n  if(h.x<.009){id=h.y;break;}\n  if(travel>MAX_DIST)break;\n  travel+=clamp(h.x*.79,.018,.63);\n }\n vec3 col=bg;\n if(id>0.){\n  vec3 p=ro+rd*travel;\n  vec3 n=calcNormal(p);\n  vec3 view=normalize(ro-p);\n  vec3 L=normalize(vec3(-.52,.80,-.4));\n  vec3 fill=normalize(vec3(.75,.35,-.3));\n  float ambient=ao(p,n);\n  float shaded=shadow(p+n*.025,L);\n  float metallic=id>2.5?.85:.38;\n  vec3 base=material(id,p);\n  vec3 key=mix(vec3(.65,.84,1.),vec3(.65,1.,.81),uRepaired*.55);\n  float diffuse=max(dot(n,L),0.)*shaded;\n  float bounce=max(dot(n,fill),0.);\n  float spec=pow(max(dot(n,normalize(L+view)),0.),metallic>0.6?100.:35.);\n  float fres=pow(1.-max(dot(n,view),0.),5.);\n  col=base*(vec3(.19,.24,.28)+key*diffuse*1.2+vec3(.18,.22,.26)*bounce*.58)*ambient;\n  col+=spec*shaded*vec3(1.,.8,.50)*(metallic>0.6?1.55:.55);\n  col+=fres*vec3(.15,.27,.33)*(metallic*.85);\n  if(id>4.5&&id<6.9)col+=vec3(.92,.56,.26)*(.38+uRepaired*.76);\n  if(id<1.5){\n    vec3 refl=reflect(rd,n);\n    float glint=pow(max(dot(refl,normalize(vec3(.15,.7,1.))),0.),18.);\n    col+=vec3(.18,.32,.42)*glint*.44;\n    col+=vec3(.21,.32,.35)*exp(-23.*abs(p.x))*exp(-.16*abs(p.z-1.3))*.23;\n  }\n  col=mix(col,bg,1.-exp(-.010*travel*travel));\n }\n float bloom=exp(-8.*length(uv-vec2(0.,.04)));\n col+=vec3(.08,.16,.20)*bloom*(.2+uRepaired*.11);\n col*=clamp(1.-.18*pow(length(uv)*1.25,2.),.60,1.);\n col*=2.45;\n col=col/(1.+col);\n col=pow(max(col,0.),vec3(.78));\n fragColor=vec4(col,1.);\n}";
+ function shader(type,source){
+  const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);
+  if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error('shader compile: '+gl.getShaderInfoLog(s));
+  return s;
+ }
+ const vs=shader(gl.VERTEX_SHADER,vertex),fs=shader(gl.FRAGMENT_SHADER,frag);
+ program=gl.createProgram();gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);
+ if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('shader link: '+gl.getProgramInfoLog(program));
+ gl.useProgram(program);
+ gl.deleteShader(vs);gl.deleteShader(fs);
+ gl.bindVertexArray(gl.createVertexArray());
+ const uniforms={
+  resolution:gl.getUniformLocation(program,'uResolution'),
+  time:gl.getUniformLocation(program,'uTime'),
+  repaired:gl.getUniformLocation(program,'uRepaired'),
+  scene:gl.getUniformLocation(program,'uScene'),
+  pointer:gl.getUniformLocation(program,'uPointer')
+ };
+ const mobile=matchMedia('(max-width:720px)').matches;
+ const cores=navigator.hardwareConcurrency||4;
+ const low=mobile||(navigator.deviceMemory&&navigator.deviceMemory<=4)||cores<=4;
+ let quality=low?.80:.92;
+ const minQuality=low?.48:.60;
+ let frames=0,average=0,last=0,raf=0,active=false,paused=true,dead=false,slowSamples=0,everDrawn=false;
+ const pointer={x:0,y:0};
+ const sceneState=()=>({
+  scene:({route:0,trust:1,lead:2})[document.getElementById('visualScene')?.dataset.mission]||0,
+  repaired:stage.classList.contains('repaired')?1:0
+ });
+ function resize(){
+  const rect=surface.getBoundingClientRect();
+  if(rect.width<2||rect.height<2)return;
+  const w=Math.max(2,Math.min(960,Math.round(rect.width*quality)));
+  const h=Math.max(2,Math.min(540,Math.round(rect.height*quality)));
+  if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}
+  metrics.quality=quality;metrics.resolution=[w,h];
+ }
+ function stop(){active=false;metrics.active=false;cancelAnimationFrame(raf)}
+ function disable(reason){
+  stop();dead=true;metrics.mode='css-fallback';metrics.error=reason;
+  toggle.textContent='LITE · GPU LIMITED';toggle.setAttribute('aria-pressed','false');toggle.disabled=true;
+  if(canvas){canvas.style.opacity='0';if(cssOrb)cssOrb.style.opacity='1';setTimeout(()=>canvas.remove(),750)}
+ }
+ function draw(ms){
+  if(!active||paused||dead)return;
+  const target=low?65:40;
+  if(ms-last<target){raf=requestAnimationFrame(draw);return}
+  const delta=last?ms-last:target;
+  last=ms;
+  resize();
+  const s=sceneState();
+  gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);
+  gl.uniform1f(uniforms.time,ms*.001);
+  gl.uniform1f(uniforms.repaired,s.repaired);
+  gl.uniform1f(uniforms.scene,s.scene);
+  gl.uniform2f(uniforms.pointer,pointer.x,pointer.y);
+  gl.drawArrays(gl.TRIANGLES,0,3);
+  frames++;
+  if(!everDrawn){canvas.style.opacity='1';if(cssOrb){cssOrb.style.transition='opacity .35s ease';cssOrb.style.opacity='0'}everDrawn=true}
+  average=frames===1?delta:average*.92+delta*.08;
+  metrics.drawnFrames=frames;metrics.avgIntervalMs=Math.round(average*10)/10;
+  if(frames%8===0){
+   if(average>105)slowSamples++;
+   else slowSamples=Math.max(0,slowSamples-1);
+   if(slowSamples>=2){
+    slowSamples=0;
+    if(quality>minQuality+.02){quality=Math.max(minQuality,quality*.75);resize()}
+    else if(average>140){disable('frame pacing below minimum');return}
+   }
+  }
+  raf=requestAnimationFrame(draw);
+ }
+ function start(){
+  if(active||paused||dead)return;
+  active=true;metrics.active=true;raf=requestAnimationFrame(draw);
+ }
+ const io=new IntersectionObserver(entries=>{
+  paused=!lifecycle?.enabled||!entries[0]?.isIntersecting||document.hidden;
+  if(paused)stop();else start()
+ },{threshold:.06});
+ io.observe(stage);
+ document.addEventListener('visibilitychange',()=>{
+  paused=!lifecycle?.enabled||document.hidden||stage.getBoundingClientRect().bottom<0||stage.getBoundingClientRect().top>innerHeight;
+  if(paused)stop();else start();
+ });
+ if(!low){
+  stage.addEventListener('pointermove',e=>{
+   const rect=stage.getBoundingClientRect();
+   pointer.x=Math.max(-1,Math.min(1,((e.clientX-rect.left)/Math.max(1,rect.width)-.5)*2));
+   pointer.y=Math.max(-1,Math.min(1,((e.clientY-rect.top)/Math.max(1,rect.height)-.5)*2));
+  },{passive:true});
+ }
+ canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();disable('webgl context lost')},{once:true});
+ metrics.mode='webgl2-studio';metrics.backend='WebGL2 analytic shader';metrics.quality=quality;
+ lifecycle={enabled:true,set(enabled){
+   this.enabled=enabled;
+   if(!enabled){
+     paused=true;stop();canvas.style.opacity='0';
+     if(cssOrb)cssOrb.style.opacity='1';
+     metrics.mode='css-fallback';toggle.textContent='✦ CINEMATIC 3D';toggle.setAttribute('aria-pressed','false');
+   }else{
+     metrics.mode='webgl2-studio';toggle.textContent='✓ CINEMATIC ON';toggle.setAttribute('aria-pressed','true');
+     if(cssOrb&&everDrawn)cssOrb.style.opacity='0';
+     canvas.style.opacity=everDrawn?'1':'0';
+     const b=stage.getBoundingClientRect();
+     paused=document.hidden||b.bottom<0||b.top>innerHeight;
+     if(!paused)start();
+   }
+ }};
+ toggle.textContent='✓ CINEMATIC ON';toggle.setAttribute('aria-pressed','true');
+}catch(e){
+ metrics.error=String(e).slice(0,230);metrics.mode='css-fallback';
+ canvas?.remove();if(cssOrb)cssOrb.style.opacity='1';
+ toggle.textContent='LITE MODE';toggle.setAttribute('aria-pressed','false');toggle.disabled=true;
+}
+}
+toggle.addEventListener('click',()=>{
+ if(!initialized){initialized=true;initialize()}
+ else if(lifecycle)lifecycle.set(!lifecycle.enabled);
+});
+if(new URLSearchParams(location.search).get('cinematic')==='1'){
+ const schedule=window.requestIdleCallback||((fn)=>setTimeout(fn,250));
+ schedule(()=>{if(!toggle.disabled)toggle.click()},{timeout:1800});
+}
+})();</script>
 </body></html>
