@@ -657,7 +657,7 @@ toggle.addEventListener('click',()=>{
  if(!initialized){initialized=true;initialize()}
  else if(lifecycle)lifecycle.set(!lifecycle.enabled);
 });
-if(new URLSearchParams(location.search).get('cinematic')==='1'){
+if(new URLSearchParams(location.search).get('cinematic')==='1'||new URLSearchParams(location.hash.replace(/^#/,'')).get('cinematic')==='1'){
  const schedule=window.requestIdleCallback||((fn)=>setTimeout(fn,250));
  schedule(()=>{if(!toggle.disabled)toggle.click()},{timeout:1800});
 }
