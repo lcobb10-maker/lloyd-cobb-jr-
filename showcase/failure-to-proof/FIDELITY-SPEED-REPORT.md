@@ -35,6 +35,21 @@ The shader compiles only after the user's explicit selection, or after an explic
 
 **Important limitation:** The shader is physically inspired procedural graphics, not photogrammetry, cinematic PBR textures or a verified 60 FPS AAA scene. The AWS software-rendered Chromium test is not representative of physical iPad GPU performance.
 
+## Published-preview laboratory check
+
+With the immutable release opened through GitHub HTML Preview on the AWS
+headless Chrome runner, one 390 px mobile navigation measured:
+
+- Standard network: FCP/LCP **288 ms**, CLS **0** in that run.
+- Simulated slow 4G with four-times CPU throttle: FCP/LCP **552 ms**, CLS **0** in that run.
+- Zero horizontal overflow, zero JavaScript runtime errors, and the playable
+  mission controls remained available.
+
+See `qa/performance.json`. These are lab measurements in a single environment
+with browser caches and provider behavior that may differ from a real visitor.
+The earlier public 800 ms / 1,864 ms measurements are from a different run,
+so treat them as directional rather than a controlled public-hosting A/B.
+
 ## Data-path assessment
 
 This showcase has no live API or database to optimize. Its business scenarios, repair decisions and mock acceptance checks are static first-party data bundled with the HTML. No 3D textures, media clips or customer data are fetched. The main bandwidth tradeoff is the approximately 5.1 KB additional gzipped shader/renderer logic; it is paid once as part of the page, not on every frame. Google Fonts CSS remains external but is loaded without blocking initial render.
