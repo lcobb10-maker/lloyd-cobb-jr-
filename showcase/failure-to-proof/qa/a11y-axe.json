@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-13T11:11:24.575Z",
+  "url": "file:///home/ubuntu/itt-showcase/public/index.html",
+  "report": [
+    {
+      "name": "mobile-initial",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 28
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "name": "desktop-initial",
+      "width": 1280,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 27
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "name": "mobile-outcome",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 33
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "name": "mobile-fallback",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 30
+        }
+      ],
+      "passes": 38
+    }
+  ]
+}
