@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime,timezone
 import json,re,hashlib
 root=Path('/home/ubuntu/itt-showcase/public')
-files=['template.html','style.css','upgrade.css','app.js','upgrade_runtime.js','build.py']
+files=['template.html','style.css','upgrade.css','app.js','upgrade_runtime.js','visual-engine.js','studio.frag','build.py']
 CODE=chr(96)
 specific={
 'app.js':{9:('P1','Can director timers be owned and canceled safely?','No runtime AI; use deterministic state transitions.','Patched and adversarially tested.'),
@@ -26,6 +26,8 @@ def generic(fname,s):
  st=s.strip()
  if not st:return ('P4','Could this blank line improve grouping and legibility?','No AI needed.','KEEP')
  if st.startswith(('/*','*','//','#')):return ('P4','Is this comment true, current, and useful?','AI may flag stale docs; verify in code.','REVIEW')
+ if fname.endswith('.frag'):
+  return ('P2','Does this shader improve visible realism without exhausting mobile GPU or distorting colors?','AI art direction may help; measure actual frame pacing and reliable CSS fallback.','TEST')
  if fname.endswith('.css'):
   if '@media' in st:return ('P2','Does this responsive rule pass 320px and 390px browser acceptance?','AI screenshot comparison possible; browser test authoritative.','TEST')
   if 'animation:' in st:return ('P3','Does this animation illustrate a state transition instead of decorating?','AI design critique optional, no model at runtime.','REVIEW')
@@ -42,7 +44,7 @@ def generic(fname,s):
  return ('P3','What user outcome would break if this line were removed? Could it be simpler?','AI should help only if measured benefit exceeds cost and risk.','REVIEW')
 out=['# Failure to Proof — adversarial, per-source-line improvement and AI review',
 '','Audit time: '+datetime.now(timezone.utc).isoformat(),
-'Scope: each authored physical line in six canonical source files. Generated HTML is derived from these sources and is not counted twice. Minified vendored GSAP excluded; dependency risk assessed separately.',
+'Scope: each authored physical line in eight canonical source files. Generated HTML is derived from these sources and is not counted twice. Minified vendored GSAP excluded; dependency risk assessed separately.',
 '','## Executive findings',
 '- P0: mock assertions rather than timer-only fake passes; previous repair retained and negative assertions verified.',
 '- P1: interrupted Director Cut previously risked zombie test completion; added explicit manual interruption and cancellation.',
