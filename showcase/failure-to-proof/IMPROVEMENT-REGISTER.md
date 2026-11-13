@@ -30,3 +30,18 @@ This is the actionable counterpart to the 482-line and 2,488-property audits. Ea
 ## Practical next acceptance
 
 A physical iPad user opens the live generic demo, tries the 20-second director cut, completes the three repair choices, reads the mock receipt and reports any gesture/UI obstruction. Next, show the text audit and the interactive demo to people unfamiliar with either. Do not call the presentation more effective until those viewers demonstrate it.
+
+## Cinematic + speed release (2026-11-13)
+
+| Priority | Finding | Fix or deliberate decision | Objective receipt / remaining proof |
+| --- | --- | --- | --- |
+| P1 | Rendering a complex shader on initial load hurt software-rendered Chrome | **Lite default**; WebGL2 compiles only on explicit opt-in or cinematic deep link | Zero initial GPU draws in visual-modes.json |
+| P1 | The 3D camera was mirrored and concealed the sculpture behind the evidence plate | Correct camera handedness and move the stage composition into the visible area | Visual screenshots and six-mode visual browser suite |
+| P1 | Direct cinematic query arguments broke GitHub HTML preview URL parsing | Use `#cinematic=1` fragment, leaving preview's source query untouched | Public desktop, mobile and deep-link tests |
+| P1 | Reduced-motion, low-data and unsupported GPU needed safe fallback | Respect browser preferences; disable WebGL or fall back on context/render failure; stop offscreen frames | Automated browser fallback and toggle assertions |
+| P2 | Brand font stylesheet blocked first content | Load custom font CSS nonblocking with system fallback | Local throttled A/B median FCP 592 → 400 ms; candidate CLS 0.00062 |
+| P2 | Realistic lighting needed to remain independent of huge media transfers | Implement procedural metal/architectural scene with no external texture/model requests | Candidate gzip estimate ~50.8 KB vs prior ~45.7 KB; FIDELITY-SPEED-REPORT.md |
+| P2 | WebGL2 software benchmark has insufficient FPS for a global default | Leave high-fidelity mode optional, dynamically downgrade, do not promise 60 FPS | Physical iPad Safari GPU/thermal verification OPEN |
+| P3 | More animated words would distract from business consequences | Preserve owner decisions and real mock acceptance checks as the primary interaction | Blind viewer comprehension A/B testing OPEN |
+
+**AI decision:** No model is required for geometry rendering or caching. A bounded AI creative reviewer can propose better material palettes and composition, but physical visual/performance measurements and user comprehension determine acceptance.
