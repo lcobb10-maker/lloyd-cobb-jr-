@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13T11:11:24.575Z",
+  "date": "2026-11-13T12:29:16.151Z",
   "url": "file:///home/ubuntu/itt-showcase/public/index.html",
   "report": [
     {
@@ -15,7 +15,7 @@
         {
           "id": "color-contrast",
           "impact": "serious",
-          "nodes": 28
+          "nodes": 30
         }
       ],
       "passes": 32
@@ -33,7 +33,7 @@
         {
           "id": "color-contrast",
           "impact": "serious",
-          "nodes": 27
+          "nodes": 28
         }
       ],
       "passes": 32
