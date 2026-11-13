@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-11-13T11:09:33.368Z",
+  "results": [
+    {
+      "case": "local desktop",
+      "width": 1365,
+      "elapsedMs": 1092,
+      "firstContentfulPaint": 656,
+      "largestContentfulPaint": 656,
+      "cumulativeLayoutShift": 0.010147785500349603,
+      "widthOverflow": 0,
+      "fontStatus": "loaded",
+      "resourceCount": 1,
+      "resourceHosts": [
+        "fonts.googleapis.com"
+      ],
+      "title": "Failure → Proof | ITT TOLD'EM",
+      "ctaVisible": true,
+      "errors": [],
+      "networkFailures": []
+    },
+    {
+      "case": "local mobile",
+      "width": 390,
+      "elapsedMs": 1025,
+      "firstContentfulPaint": 472,
+      "largestContentfulPaint": 472,
+      "cumulativeLayoutShift": 0,
+      "widthOverflow": 0,
+      "fontStatus": "loaded",
+      "resourceCount": 1,
+      "resourceHosts": [
+        "fonts.googleapis.com"
+      ],
+      "title": "Failure → Proof | ITT TOLD'EM",
+      "ctaVisible": true,
+      "errors": [],
+      "networkFailures": []
+    },
+    {
+      "case": "local ipad emulation",
+      "width": 1024,
+      "elapsedMs": 1001,
+      "firstContentfulPaint": 656,
+      "largestContentfulPaint": 656,
+      "cumulativeLayoutShift": 0.05292005303368119,
+      "widthOverflow": 0,
+      "fontStatus": "loaded",
+      "resourceCount": 1,
+      "resourceHosts": [
+        "fonts.googleapis.com"
+      ],
+      "title": "Failure → Proof | ITT TOLD'EM",
+      "ctaVisible": true,
+      "errors": [],
+      "networkFailures": []
+    },
+    {
+      "case": "public mobile standard",
+      "width": 390,
+      "elapsedMs": 1184,
+      "firstContentfulPaint": 800,
+      "largestContentfulPaint": 800,
+      "cumulativeLayoutShift": 0,
+      "widthOverflow": 0,
+      "fontStatus": "loaded",
+      "resourceCount": 4,
+      "resourceHosts": [
+        "htmlpreview.github.io",
+        "raw.githubusercontent.com",
+        "fonts.googleapis.com"
+      ],
+      "title": "Failure → Proof | ITT TOLD'EM",
+      "ctaVisible": true,
+      "errors": [],
+      "networkFailures": []
+    },
+    {
+      "case": "public mobile slow-4g",
+      "width": 390,
+      "elapsedMs": 3709,
+      "firstContentfulPaint": 1864,
+      "largestContentfulPaint": 1864,
+      "cumulativeLayoutShift": 0,
+      "widthOverflow": 0,
+      "fontStatus": "loaded",
+      "resourceCount": 3,
+      "resourceHosts": [
+        "htmlpreview.github.io",
+        "raw.githubusercontent.com",
+        "fonts.googleapis.com"
+      ],
+      "title": "Failure → Proof | ITT TOLD'EM",
+      "ctaVisible": true,
+      "errors": [],
+      "networkFailures": []
+    }
+  ]
+}
