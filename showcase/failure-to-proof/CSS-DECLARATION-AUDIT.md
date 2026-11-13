@@ -1,8 +1,8 @@
 # Failure → Proof — CSS Rule and Declaration Audit
 
 CSSOM rule-level audit of the assembled experience. Complements the source line audit. Third-party font CSS excluded.
-Generated: 2026-11-13T11:08:14.969162+00:00
-Rules: 271; properties: 2488; overlapping values: 20; unmatched at first view: 5.
+Generated: 2026-11-13T12:19:50.363864+00:00
+Rules: 289; properties: 2633; overlapping values: 20; unmatched at first view: 7.
 
 ## Actionable findings
 
@@ -30,7 +30,7 @@ Media: global; first-view DOM matches: 1; property count: 9
 | `--edge` | `#334553` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
 
 ### Rule 2: `*`
-Media: global; first-view DOM matches: 206; property count: 1
+Media: global; first-view DOM matches: 209; property count: 1
 
 | Property | Value | Improvement question | AI contribution | Status |
 |---|---|---|---|---|
@@ -84,7 +84,7 @@ Media: global; first-view DOM matches: 1; property count: 25
 | `overflow-x` | `hidden` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
 
 ### Rule 5: `button, a`
-Media: global; first-view DOM matches: 17; property count: 19
+Media: global; first-view DOM matches: 18; property count: 19
 
 | Property | Value | Improvement question | AI contribution | Status |
 |---|---|---|---|---|
@@ -109,7 +109,7 @@ Media: global; first-view DOM matches: 17; property count: 19
 | `font-language-override` | `inherit` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
 
 ### Rule 6: `button`
-Media: global; first-view DOM matches: 15; property count: 1
+Media: global; first-view DOM matches: 16; property count: 1
 
 | Property | Value | Improvement question | AI contribution | Status |
 |---|---|---|---|---|
@@ -3165,7 +3165,7 @@ Media: (max-width: 540px); first-view DOM matches: 3; property count: 1
 | `width` | `100%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
 
 ### Rule 210: `*`
-Media: (prefers-reduced-motion: reduce); first-view DOM matches: 206; property count: 17
+Media: (prefers-reduced-motion: reduce); first-view DOM matches: 209; property count: 17
 
 | Property | Value | Improvement question | AI contribution | Status |
 |---|---|---|---|---|
@@ -4128,13 +4128,266 @@ Media: (prefers-reduced-motion: reduce); first-view DOM matches: 1; property cou
 | `animation-range-start` | `normal` | Does this communicate state and respect reduced motion without excess CPU? | AI storyboard optional; browser performance required. | REGRESSION CHECK |
 | `animation-range-end` | `normal` | Does this communicate state and respect reduced motion without excess CPU? | AI storyboard optional; browser performance required. | REGRESSION CHECK |
 
+### Rule 272: `.simulation-stage > .spatial-render`
+Media: global; first-view DOM matches: 0; property count: 2
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `0` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | CHECK DYNAMIC STATE |
+| `pointer-events` | `none` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | CHECK DYNAMIC STATE |
+
+### Rule 273: `.simulation-stage > .stage-grid`
+Media: global; first-view DOM matches: 1; property count: 2
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `1` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+| `opacity` | `0.26` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 274: `.simulation-stage > .stage-fog`
+Media: global; first-view DOM matches: 1; property count: 2
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `1` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+| `opacity` | `0.32` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 275: `.simulation-stage > .scene-container`
+Media: global; first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `2` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 276: `.simulation-stage .mission-callout`
+Media: global; first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `5` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 277: `.simulation-stage > .stage-grid`
+Media: (prefers-reduced-motion: reduce); first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `opacity` | `0.48` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 278: `.simulation-stage > .stage-fog`
+Media: (prefers-reduced-motion: reduce); first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `opacity` | `1` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 279: `.visual-scene > .spatial-render`
+Media: global; first-view DOM matches: 0; property count: 9
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `position` | `absolute` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `top` | `0px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `right` | `0px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `bottom` | `0px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `left` | `0px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `width` | `100%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `height` | `100%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | CHECK DYNAMIC STATE |
+| `z-index` | `0` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | CHECK DYNAMIC STATE |
+| `pointer-events` | `none` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | CHECK DYNAMIC STATE |
+
+### Rule 280: `.visual-scene .plate-small`
+Media: global; first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `3` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 281: `.visual-scene .visual-orb`
+Media: global; first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `1` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 282: `.visual-scene .shine, .visual-scene .film-beam`
+Media: global; first-view DOM matches: 2; property count: 2
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `z-index` | `2` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+| `pointer-events` | `none` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 283: `.quality-toggle`
+Media: global; first-view DOM matches: 1; property count: 57
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `position` | `absolute` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `z-index` | `9` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+| `right` | `20px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `top` | `37px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `border-top-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-top-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-top-color` | `rgb(211, 184, 137)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-color` | `rgb(211, 184, 137)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-color` | `rgb(211, 184, 137)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-color` | `rgb(211, 184, 137)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-source` | `none` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-slice` | `100%` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-width` | `1` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-outset` | `0` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-repeat` | `stretch` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-image` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-x` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-y` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-size` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-repeat` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-attachment` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-origin` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-clip` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-color` | `rgba(9, 30, 44, 0.867)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `color` | `rgb(255, 225, 170)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `padding-top` | `7px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-right` | `11px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-bottom` | `7px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-left` | `11px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `font-style` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-caps` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-ligatures` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-numeric` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-east-asian` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-alternates` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-size-adjust` | `none` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-language-override` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-kerning` | `auto` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-optical-sizing` | `auto` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-feature-settings` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variation-settings` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-position` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-variant-emoji` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-weight` | `800` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-stretch` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-size` | `9px` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `line-height` | `normal` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `font-family` | `"Space Grotesk", system-ui, sans-serif` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `letter-spacing` | `0.07em` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+| `min-height` | `34px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `backdrop-filter` | `blur(7px)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 284: `.quality-toggle[aria-pressed="true"]`
+Media: global; first-view DOM matches: 0; property count: 14
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `border-top-color` | `rgb(121, 214, 193)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-color` | `rgb(121, 214, 193)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-color` | `rgb(121, 214, 193)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-color` | `rgb(121, 214, 193)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `color` | `rgb(194, 241, 228)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-image` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-x` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-y` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-size` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-repeat` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-attachment` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-origin` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-clip` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-color` | `rgba(19, 55, 47, 0.86)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 285: `.quality-toggle:disabled`
+Media: global; first-view DOM matches: 0; property count: 2
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `opacity` | `0.7` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `cursor` | `not-allowed` | Is this declaration necessary and browser compatible? | AI can suggest edge cases; CSSOM and tests decide. | REGRESSION CHECK |
+
+### Rule 286: `.quality-toggle`
+Media: (max-width: 540px); first-view DOM matches: 1; property count: 8
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `top` | `26px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `right` | `9px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-top` | `5px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-right` | `8px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-bottom` | `5px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-left` | `8px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `min-height` | `29px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `font-size` | `8px` | Does this remain legible and communicate hierarchy from 320px to desktop? | AI copy critique optional; contrast and layout tests required. | REGRESSION CHECK |
+
+### Rule 287: `.visual-scene .plate-small`
+Media: global; first-view DOM matches: 1; property count: 33
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `right` | `3%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `width` | `37%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-top` | `16px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-right` | `16px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-bottom` | `16px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-left` | `16px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `background-image` | `linear-gradient(145deg, rgba(6, 20, 32, 0.92), rgba(9, 25, 36, 0.85))` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-x` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-position-y` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-size` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-repeat` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-attachment` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-origin` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-clip` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `background-color` | `initial` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-top-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-width` | `1px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-top-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-style` | `solid` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-top-color` | `rgba(158, 179, 180, 0.55)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-right-color` | `rgba(158, 179, 180, 0.55)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-bottom-color` | `rgba(158, 179, 180, 0.55)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-left-color` | `rgba(158, 179, 180, 0.55)` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-source` | `none` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-slice` | `100%` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-width` | `1` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-outset` | `0` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `border-image-repeat` | `stretch` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+| `box-shadow` | `rgba(0, 0, 0, 0.533) 0px 14px 45px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 288: `.visual-scene .plate-small strong`
+Media: global; first-view DOM matches: 1; property count: 1
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `text-shadow` | `rgba(255, 255, 255, 0.063) 0px 2px 14px` | Does this preserve contrast and hierarchy at mobile scale? | AI screenshot critique optional; axe/browser evidence decisive. | REGRESSION CHECK |
+
+### Rule 289: `.visual-scene .plate-small`
+Media: (max-width: 540px); first-view DOM matches: 1; property count: 7
+
+| Property | Value | Improvement question | AI contribution | Status |
+|---|---|---|---|---|
+| `width` | `46%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `right` | `3%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-top` | `9px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-right` | `9px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-bottom` | `9px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `padding-left` | `9px` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+| `top` | `17%` | Could simpler layout preserve hierarchy, usability and keyboard flow? | Use measured layout; AI may propose refactor but cannot self-certify. | REGRESSION CHECK |
+
 ## Category counts
 
-- VISUAL: 1021
-- LAYOUT: 672
-- TYPOGRAPHY: 672
+- VISUAL: 1096
+- LAYOUT: 707
+- TYPOGRAPHY: 693
 - MOTION: 94
-- OTHER: 29
+- OTHER: 43
 
 ## Limits
 - CSSOM expands CSS shorthands; property counts represent browser-resolved declarations, not separately authored declarations.
