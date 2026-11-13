@@ -1,7 +1,7 @@
 # Failure to Proof — adversarial, per-source-line improvement and AI review
 
-Audit time: 2026-11-13T11:14:21.868846+00:00
-Scope: each authored physical line in six canonical source files. Generated HTML is derived from these sources and is not counted twice. Minified vendored GSAP excluded; dependency risk assessed separately.
+Audit time: 2026-11-13T12:29:31.523366+00:00
+Scope: each authored physical line in eight canonical source files. Generated HTML is derived from these sources and is not counted twice. Minified vendored GSAP excluded; dependency risk assessed separately.
 
 ## Executive findings
 - P0: mock assertions rather than timer-only fake passes; previous repair retained and negative assertions verified.
@@ -23,7 +23,7 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 
 ## Per-line audit
 
-### template.html — 77 physical lines
+### template.html — 80 physical lines
 
 | Line | Current source cue | Priority | Improvement question | AI: where useful / where not | Status |
 |---:|---|---|---|---|---|
@@ -38,72 +38,75 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 9 | `<link rel="preconnect" href="https://fonts.googleapis.com">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
 | 10 | `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
 | 11 | `<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;50…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 12 | `<style>/*BUILD_CSS*/</style>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 13 | `</head>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 14 | `<body>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 15 | `<main class="shell">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 16 | `<header class="mast">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 17 | `<div class="identity"><div class="emblem">I<span>T</span></div><div><b>I…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 18 | `<div class="build-status"><i></i> INTERACTIVE CONCEPT · NO LIVE CLIENT D…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 19 | `<a class="site-link" href="https://ittoldem.com/" target="_blank" rel="n…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 20 | `</header>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 21 | `<section class="intro">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 22 | `<div class="eyebrow"><span class="orbit">✳</span> EXPERIENCE 001 <span c…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 23 | `<h1>FIND THE FRICTION.<br><em>PLAY THE REPAIR.</em></h1>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 24 | `<p>One customer gets stuck. You diagnose the problem, choose what matter…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 25 | `<div class="hero-actions"><button id="jumpToGame" class="button-primary"…` | P2 | Can viewers distinguish Play from Watch quickly? | AI can draft alternatives; A/B test with viewers. | Pilot not run. |
-| 26 | `<div class="intro-footer"><span><span class="pulse"></span> BUILT FOR BU…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 27 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 28 | `<section class="experience" aria-label="Interactive business-repair simu…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 29 | `<div class="experience-toolbar">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 30 | `<div class="exp-label"><span>01 — CUSTOMER JOURNEY</span><b id="missionT…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 31 | `<div class="tracking"><span id="missionCounter">MISSION 01 / 03</span><s…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 32 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 33 | `<div class="simulation-stage" id="stage">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 34 | `<div class="stage-fog" aria-hidden="true"></div><div class="stage-grid" …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 35 | `<div class="left-stage-label">REAL EXPERIENCE / HYPOTHETICAL SCENARIO</d…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 36 | `<div class="right-stage-label" id="stageResult">SIMULATION RUNNING</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 37 | `<div class="scene-container">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 38 | `<div class="glass-browser" id="browserArt">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 39 | `<div class="browser-chrome"><div class="dots"><i></i><i></i><i></i></div…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 40 | `<div class="browser-content">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 41 | `<div class="browser-brand"><span class="logo-box">A</span> AN EXAMPLE BU…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 42 | `<div class="visual-scene" id="visualScene"><div class="shine"></div><div…` | P2 | Does rendered art make any false photorealistic 3D claim? | AI imagery can help but would not prove actual WebGL. | CSS perspective only; clearly demo. |
-| 43 | `<div class="browser-foot"><div class="foot-line"></div><div class="foot-…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 44 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 45 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 46 | `<div class="artifact artifact-top" aria-hidden="true"><span>TRACE ID</sp…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 47 | `<div class="artifact artifact-bottom" aria-hidden="true"><span>PATH STAT…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 48 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 49 | `<div id="directorOverlay" class="director-overlay" hidden aria-live="pol…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 12 | `<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:w…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 13 | `<style>/*BUILD_CSS*/</style>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 14 | `</head>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 15 | `<body>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 16 | `<main class="shell">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 17 | `<header class="mast">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 18 | `<div class="identity"><div class="emblem">I<span>T</span></div><div><b>I…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 19 | `<div class="build-status"><i></i> INTERACTIVE CONCEPT · NO LIVE CLIENT D…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 20 | `<a class="site-link" href="https://ittoldem.com/" target="_blank" rel="n…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 21 | `</header>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 22 | `<section class="intro">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 23 | `<div class="eyebrow"><span class="orbit">✳</span> EXPERIENCE 001 <span c…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 24 | `<h1>FIND THE FRICTION.<br><em>PLAY THE REPAIR.</em></h1>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 25 | `<p>One customer gets stuck. You diagnose the problem, choose what matter…` | P2 | Can viewers distinguish Play from Watch quickly? | AI can draft alternatives; A/B test with viewers. | Pilot not run. |
+| 26 | `<div class="hero-actions"><button id="jumpToGame" class="button-primary"…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 27 | `<div class="intro-footer"><span><span class="pulse"></span> BUILT FOR BU…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 28 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 29 | `<section class="experience" aria-label="Interactive business-repair simu…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 30 | `<div class="experience-toolbar">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 31 | `<div class="exp-label"><span>01 — CUSTOMER JOURNEY</span><b id="missionT…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 32 | `<div class="tracking"><span id="missionCounter">MISSION 01 / 03</span><s…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 33 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 34 | `<div class="simulation-stage" id="stage">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 35 | `<button id="qualityToggle" class="quality-toggle" type="button" aria-pre…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 36 | `<div class="stage-fog" aria-hidden="true"></div><div class="stage-grid" …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 37 | `<div class="left-stage-label">REAL EXPERIENCE / HYPOTHETICAL SCENARIO</d…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 38 | `<div class="right-stage-label" id="stageResult">SIMULATION RUNNING</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 39 | `<div class="scene-container">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 40 | `<div class="glass-browser" id="browserArt">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 41 | `<div class="browser-chrome"><div class="dots"><i></i><i></i><i></i></div…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 42 | `<div class="browser-content">` | P2 | Does rendered art make any false photorealistic 3D claim? | AI imagery can help but would not prove actual WebGL. | CSS perspective only; clearly demo. |
+| 43 | `<div class="browser-brand"><span class="logo-box">A</span> AN EXAMPLE BU…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 44 | `<div class="visual-scene" id="visualScene"><div class="shine"></div><div…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 45 | `<div class="browser-foot"><div class="foot-line"></div><div class="foot-…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 46 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 47 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 48 | `<div class="artifact artifact-top" aria-hidden="true"><span>TRACE ID</sp…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 49 | `<div class="artifact artifact-bottom" aria-hidden="true"><span>PATH STAT…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
 | 50 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 51 | `<div class="interaction">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 52 | `<div class="interaction-top"><div><span class="section-kicker">YOUR MOVE…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 53 | `<div class="choices" id="choices"></div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 54 | `<div class="feedback" id="feedback" role="status" aria-live="polite">Sel…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 55 | `<div class="action-bar"><button class="button-primary" id="advance" disa…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
-| 56 | `<div class="outcome" id="outcome" hidden>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 57 | `<div class="outcome-header"><span class="section-kicker">WHAT PROVES THI…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 58 | `<p id="outcomeDetail"></p>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 59 | `<div class="outcome-steps"><div><span>01</span><strong>PROBLEM</strong><…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 60 | `<button id="runTest" class="button-proof">▶ SIMULATE ACCEPTANCE TEST</bu…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
-| 61 | `<div id="testStatus" role="status" aria-live="polite"></div><ol id="test…` | P1 | Does every simulation link repair to real release ownership? | AI summarize verified receipts offline only. | Owner, build, release mapped. |
-| 62 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 63 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 64 | `<div class="mission-selector" id="missionSelector" aria-label="Select a …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 65 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 66 | `<section class="conclusion" id="conclusion" hidden>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 67 | `<div class="conclusion-icon">✳</div><div class="section-kicker">DEBRIEF …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 68 | `<h2>THE REAL PRODUCT<br>ISN'T THE ANIMATION.<br><em>IT'S THE PROOF.</em>…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 69 | `<p>We trace where a customer journey might fail, design an appropriate r…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 70 | `<div class="conclusion-counters"><div><b>03</b><span>SIMULATED FAILURE P…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 71 | `<div class="conclusion-actions"><button class="button-primary" id="repla…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
-| 72 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 73 | `<footer class="footer"><span>DESIGN + ENGINEERING + VERIFIABLE OUTCOMES<…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 74 | `</main>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 75 | `<script>/*BUILD_GSAP*/</script>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 76 | `<script>/*BUILD_APP*/</script>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
-| 77 | `</body></html>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 51 | `<div id="directorOverlay" class="director-overlay" hidden aria-live="pol…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 52 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 53 | `<div class="interaction">` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 54 | `<div class="interaction-top"><div><span class="section-kicker">YOUR MOVE…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 55 | `<div class="choices" id="choices"></div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 56 | `<div class="feedback" id="feedback" role="status" aria-live="polite">Sel…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 57 | `<div class="action-bar"><button class="button-primary" id="advance" disa…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 58 | `<div class="outcome" id="outcome" hidden>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 59 | `<div class="outcome-header"><span class="section-kicker">WHAT PROVES THI…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 60 | `<p id="outcomeDetail"></p>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 61 | `<div class="outcome-steps"><div><span>01</span><strong>PROBLEM</strong><…` | P1 | Does every simulation link repair to real release ownership? | AI summarize verified receipts offline only. | Owner, build, release mapped. |
+| 62 | `<button id="runTest" class="button-proof">▶ SIMULATE ACCEPTANCE TEST</bu…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 63 | `<div id="testStatus" role="status" aria-live="polite"></div><ol id="test…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 64 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 65 | `</div>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 66 | `<div class="mission-selector" id="missionSelector" aria-label="Select a …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 67 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 68 | `<section class="conclusion" id="conclusion" hidden>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 69 | `<div class="conclusion-icon">✳</div><div class="section-kicker">DEBRIEF …` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 70 | `<h2>THE REAL PRODUCT<br>ISN'T THE ANIMATION.<br><em>IT'S THE PROOF.</em>…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 71 | `<p>We trace where a customer journey might fail, design an appropriate r…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 72 | `<div class="conclusion-counters"><div><b>03</b><span>SIMULATED FAILURE P…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 73 | `<div class="conclusion-actions"><button class="button-primary" id="repla…` | P2 | Does this control have a real effect and accessible label? | AI can draft wording; runtime test required. | TEST |
+| 74 | `</section>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 75 | `<footer class="footer"><span>DESIGN + ENGINEERING + VERIFIABLE OUTCOMES<…` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 76 | `</main>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 77 | `<script>/*BUILD_GSAP*/</script>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 78 | `<script>/*BUILD_APP*/</script>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 79 | `<script>/*BUILD_VISUAL*/</script>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
+| 80 | `</body></html>` | P3 | What semantic, narrative, or interactive purpose does this element serve? | AI can suggest comprehension improvements; validate with viewers. | REVIEW |
 
 ### style.css — 24 physical lines
 
@@ -134,7 +137,7 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 23 | `.hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;ma…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
 | 24 | `@media(max-width:540px){.hero-actions{margin-top:15px}.hero-actions butt…` | P2 | Does this responsive rule pass 320px and 390px browser acceptance? | AI screenshot comparison possible; browser test authoritative. | TEST |
 
-### upgrade.css — 58 physical lines
+### upgrade.css — 83 physical lines
 
 | Line | Current source cue | Priority | Improvement question | AI: where useful / where not | Status |
 |---:|---|---|---|---|---|
@@ -196,6 +199,31 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 56 | `.plan-grid p{font-size:11px}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
 | 57 | `}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
 | 58 | `@media(prefers-reduced-motion:reduce){.visual-orb{animation:none!importa…` | P2 | Does this responsive rule pass 320px and 390px browser acceptance? | AI screenshot comparison possible; browser test authoritative. | TEST |
+| 59 | `` | P4 | Could this blank line improve grouping and legibility? | No AI needed. | KEEP |
+| 60 | `/* Low-cost cinematic background. The existing functional mock browser s…` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 61 | `.simulation-stage>.spatial-render{z-index:0;pointer-events:none}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 62 | `.simulation-stage>.stage-grid{z-index:1;opacity:.26}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 63 | `.simulation-stage>.stage-fog{z-index:1;opacity:.32}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 64 | `.simulation-stage>.scene-container{z-index:2}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 65 | `.simulation-stage .mission-callout{z-index:5}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 66 | `@media(prefers-reduced-motion:reduce){.simulation-stage>.stage-grid{opac…` | P2 | Does this responsive rule pass 320px and 390px browser acceptance? | AI screenshot comparison possible; browser test authoritative. | TEST |
+| 67 | `` | P4 | Could this blank line improve grouping and legibility? | No AI needed. | KEEP |
+| 68 | `/* The physically inspired GPU scene replaces only the illustration insi…` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 69 | `never its factual text, action controls, accessibility tree, or CSS fall…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 70 | `.visual-scene>.spatial-render{position:absolute;inset:0;width:100%;heigh…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 71 | `.visual-scene .plate-small{z-index:3}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 72 | `.visual-scene .visual-orb{z-index:1}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 73 | `.visual-scene .shine,.visual-scene .film-beam{z-index:2;pointer-events:n…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 74 | `` | P4 | Could this blank line improve grouping and legibility? | No AI needed. | KEEP |
+| 75 | `/* Explicit high-fidelity choice: zero WebGL work on default and data-sa…` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 76 | `.quality-toggle{position:absolute;z-index:9;right:20px;top:37px;border:1…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 77 | `.quality-toggle[aria-pressed=true]{border-color:#79d6c1;color:#c2f1e4;ba…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 78 | `.quality-toggle:disabled{opacity:.7;cursor:not-allowed}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 79 | `@media(max-width:540px){.quality-toggle{top:26px;right:9px;padding:5px 8…` | P2 | Does this responsive rule pass 320px and 390px browser acceptance? | AI screenshot comparison possible; browser test authoritative. | TEST |
+| 80 | `/* Show actual 3D material, not a full-width text plate disguising the r…` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 81 | `.visual-scene .plate-small{right:3%;width:37%;padding:16px;background:li…` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 82 | `.visual-scene .plate-small strong{text-shadow:0 2px 14px #ffffff10}` | P3 | Can this rule be simplified without changing visible layout? | AI could suggest CSS cleanup; compare computed style and screenshots. | REVIEW |
+| 83 | `@media(max-width:540px){.visual-scene .plate-small{width:46%;right:3%;pa…` | P2 | Does this responsive rule pass 320px and 390px browser acceptance? | AI screenshot comparison possible; browser test authoritative. | TEST |
 
 ### app.js — 153 physical lines
 
@@ -517,7 +545,291 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 156 | `},300);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 | 157 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
 
-### build.py — 13 physical lines
+### visual-engine.js — 157 physical lines
+
+| Line | Current source cue | Priority | Improvement question | AI: where useful / where not | Status |
+|---:|---|---|---|---|---|
+| 1 | `/* ITT cinematic studio — additive, no network, WebGL2 with CSS fallback…` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 2 | `An actual analytic 3D render, not a claim of photogrammetry or live clie…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 3 | `Quality auto-scales; stops offscreen; respects reduced motion/data usage…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 4 | `*/` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 5 | `(()=>{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 6 | `'use strict';` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 7 | `const stage=document.getElementById('stage');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 8 | `const surface=document.getElementById('visualScene');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 9 | `const cssOrb=document.getElementById('visualOrb');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 10 | `if(!stage//!surface)return;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 11 | `const toggle=document.getElementById('qualityToggle');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 12 | `if(!toggle)return;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 13 | `let lifecycle=null,initialized=false;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 14 | `const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 15 | `const saveData=!!navigator.connection?.saveData;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 16 | `const metrics={mode:'css-fallback',backend:'none',drawnFrames:0,avgInter…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 17 | `window.__ITT_VISUAL_METRICS__=metrics;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 18 | `if(reduced//saveData){` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 19 | `metrics.error=reduced?'reduced-motion requested':'save-data requested';` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 20 | `toggle.disabled=true;toggle.textContent=reduced?'LITE · REDUCED MOTION':…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 21 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 22 | `let gl=null,canvas=null,program=null;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 23 | `function initialize(){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 24 | `try{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 25 | `canvas=document.createElement('canvas');canvas.className='spatial-render…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 26 | `canvas.setAttribute('aria-hidden','true');` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 27 | `canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;z…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 28 | `surface.insertBefore(canvas,surface.firstChild);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 29 | `gl=canvas.getContext('webgl2',{antialias:false,alpha:false,depth:false,s…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 30 | `if(!gl)throw Error('WebGL2 unavailable');` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 31 | `const vertex='#version 300 es\nprecision highp float;\nvoid main(){vec2 …` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 32 | `const frag=/*BUILD_FRAGMENT*/;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 33 | `function shader(type,source){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 34 | `const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 35 | `if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error('shader compi…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 36 | `return s;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 37 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 38 | `const vs=shader(gl.VERTEX_SHADER,vertex),fs=shader(gl.FRAGMENT_SHADER,fr…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 39 | `program=gl.createProgram();gl.attachShader(program,vs);gl.attachShader(p…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 40 | `if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('shader l…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 41 | `gl.useProgram(program);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 42 | `gl.deleteShader(vs);gl.deleteShader(fs);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 43 | `gl.bindVertexArray(gl.createVertexArray());` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 44 | `const uniforms={` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 45 | `resolution:gl.getUniformLocation(program,'uResolution'),` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 46 | `time:gl.getUniformLocation(program,'uTime'),` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 47 | `repaired:gl.getUniformLocation(program,'uRepaired'),` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 48 | `scene:gl.getUniformLocation(program,'uScene'),` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 49 | `pointer:gl.getUniformLocation(program,'uPointer')` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 50 | `};` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 51 | `const mobile=matchMedia('(max-width:720px)').matches;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 52 | `const cores=navigator.hardwareConcurrency//4;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 53 | `const low=mobile//(navigator.deviceMemory&&navigator.deviceMemory<=4)//c…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 54 | `let quality=low?.80:.92;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 55 | `const minQuality=low?.48:.60;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 56 | `let frames=0,average=0,last=0,raf=0,active=false,paused=true,dead=false,…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 57 | `const pointer={x:0,y:0};` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 58 | `const sceneState=()=>({` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 59 | `scene:({route:0,trust:1,lead:2})[document.getElementById('visualScene')?…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 60 | `repaired:stage.classList.contains('repaired')?1:0` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 61 | `});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 62 | `function resize(){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 63 | `const rect=surface.getBoundingClientRect();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 64 | `if(rect.width<2//rect.height<2)return;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 65 | `const w=Math.max(2,Math.min(960,Math.round(rect.width*quality)));` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 66 | `const h=Math.max(2,Math.min(540,Math.round(rect.height*quality)));` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 67 | `if(canvas.width!==w//canvas.height!==h){canvas.width=w;canvas.height=h;g…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 68 | `metrics.quality=quality;metrics.resolution=[w,h];` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 69 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 70 | `function stop(){active=false;metrics.active=false;cancelAnimationFrame(r…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 71 | `function disable(reason){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 72 | `stop();dead=true;metrics.mode='css-fallback';metrics.error=reason;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 73 | `toggle.textContent='LITE · GPU LIMITED';toggle.setAttribute('aria-presse…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 74 | `if(canvas){canvas.style.opacity='0';if(cssOrb)cssOrb.style.opacity='1';s…` | P1 | What owns this timer, and is it canceled on route changes? | No AI required, explicit state machines safer. | TEST |
+| 75 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 76 | `function draw(ms){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 77 | `if(!active//paused//dead)return;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 78 | `const target=low?65:40;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 79 | `if(ms-last<target){raf=requestAnimationFrame(draw);return}` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 80 | `const delta=last?ms-last:target;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 81 | `last=ms;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 82 | `resize();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 83 | `const s=sceneState();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 84 | `gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 85 | `gl.uniform1f(uniforms.time,ms*.001);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 86 | `gl.uniform1f(uniforms.repaired,s.repaired);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 87 | `gl.uniform1f(uniforms.scene,s.scene);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 88 | `gl.uniform2f(uniforms.pointer,pointer.x,pointer.y);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 89 | `gl.drawArrays(gl.TRIANGLES,0,3);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 90 | `frames++;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 91 | `if(!everDrawn){canvas.style.opacity='1';if(cssOrb){cssOrb.style.transiti…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 92 | `average=frames===1?delta:average*.92+delta*.08;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 93 | `metrics.drawnFrames=frames;metrics.avgIntervalMs=Math.round(average*10)/…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 94 | `if(frames%8===0){` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 95 | `if(average>105)slowSamples++;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 96 | `else slowSamples=Math.max(0,slowSamples-1);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 97 | `if(slowSamples>=2){` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 98 | `slowSamples=0;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 99 | `if(quality>minQuality+.02){quality=Math.max(minQuality,quality*.75);resi…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 100 | `else if(average>140){disable('frame pacing below minimum');return}` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 101 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 102 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 103 | `raf=requestAnimationFrame(draw);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 104 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 105 | `function start(){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 106 | `if(active//paused//dead)return;` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 107 | `active=true;metrics.active=true;raf=requestAnimationFrame(draw);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 108 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 109 | `const io=new IntersectionObserver(entries=>{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 110 | `paused=!lifecycle?.enabled//!entries[0]?.isIntersecting//document.hidden…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 111 | `if(paused)stop();else start()` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 112 | `},{threshold:.06});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 113 | `io.observe(stage);` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 114 | `document.addEventListener('visibilitychange',()=>{` | P2 | Does this handler conflict with autoplay, touch, keyboard, or earlier listeners? | AI can generate edge cases, then execute deterministic tests. | TEST |
+| 115 | `paused=!lifecycle?.enabled//document.hidden//stage.getBoundingClientRect…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 116 | `if(paused)stop();else start();` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 117 | `});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 118 | `if(!low){` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 119 | `stage.addEventListener('pointermove',e=>{` | P2 | Does this handler conflict with autoplay, touch, keyboard, or earlier listeners? | AI can generate edge cases, then execute deterministic tests. | TEST |
+| 120 | `const rect=stage.getBoundingClientRect();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 121 | `pointer.x=Math.max(-1,Math.min(1,((e.clientX-rect.left)/Math.max(1,rect.…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 122 | `pointer.y=Math.max(-1,Math.min(1,((e.clientY-rect.top)/Math.max(1,rect.h…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 123 | `},{passive:true});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 124 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 125 | `canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();disabl…` | P2 | Does this handler conflict with autoplay, touch, keyboard, or earlier listeners? | AI can generate edge cases, then execute deterministic tests. | TEST |
+| 126 | `metrics.mode='webgl2-studio';metrics.backend='WebGL2 analytic shader';me…` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 127 | `lifecycle={enabled:true,set(enabled){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 128 | `this.enabled=enabled;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 129 | `if(!enabled){` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 130 | `paused=true;stop();canvas.style.opacity='0';` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 131 | `if(cssOrb)cssOrb.style.opacity='1';` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 132 | `metrics.mode='css-fallback';toggle.textContent='✦ CINEMATIC 3D';toggle.s…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 133 | `}else{` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 134 | `metrics.mode='webgl2-studio';toggle.textContent='✓ CINEMATIC ON';toggle.…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 135 | `if(cssOrb&&everDrawn)cssOrb.style.opacity='0';` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 136 | `canvas.style.opacity=everDrawn?'1':'0';` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 137 | `const b=stage.getBoundingClientRect();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 138 | `paused=document.hidden//b.bottom<0//b.top>innerHeight;` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 139 | `if(!paused)start();` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 140 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 141 | `}};` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 142 | `toggle.textContent='✓ CINEMATIC ON';toggle.setAttribute('aria-pressed','…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 143 | `}catch(e){` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 144 | `metrics.error=String(e).slice(0,230);metrics.mode='css-fallback';` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 145 | `canvas?.remove();if(cssOrb)cssOrb.style.opacity='1';` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 146 | `toggle.textContent='LITE MODE';toggle.setAttribute('aria-pressed','false…` | P2 | Is this string accurate, useful and explicitly marked simulated where required? | AI can simplify jargon but cannot fabricate evidence. | REVIEW |
+| 147 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 148 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 149 | `toggle.addEventListener('click',()=>{` | P2 | Does this handler conflict with autoplay, touch, keyboard, or earlier listeners? | AI can generate edge cases, then execute deterministic tests. | TEST |
+| 150 | `if(!initialized){initialized=true;initialize()}` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 151 | `else if(lifecycle)lifecycle.set(!lifecycle.enabled);` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 152 | `});` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 153 | `if(new URLSearchParams(location.search).get('cinematic')==='1'//new URLS…` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 154 | `const schedule=window.requestIdleCallback//((fn)=>setTimeout(fn,250));` | P1 | What owns this timer, and is it canceled on route changes? | No AI required, explicit state machines safer. | TEST |
+| 155 | `schedule(()=>{if(!toggle.disabled)toggle.click()},{timeout:1800});` | P2 | What happens under the opposite branch or invalid state? | AI can suggest counterexamples; deterministic tests run them. | TEST |
+| 156 | `}` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+| 157 | `})();` | P3 | What user outcome would break if this line were removed? Could it be simpler? | AI should help only if measured benefit exceeds cost and risk. | REVIEW |
+
+### studio.frag — 117 physical lines
+
+| Line | Current source cue | Priority | Improvement question | AI: where useful / where not | Status |
+|---:|---|---|---|---|---|
+| 1 | `#version 300 es` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 2 | `precision highp float;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 3 | `out vec4 fragColor;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 4 | `uniform vec2 uResolution;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 5 | `uniform float uTime,uRepaired,uScene;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 6 | `uniform vec2 uPointer;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 7 | `#define STEPS 54` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 8 | `#define MAX_DIST 24.` | P4 | Is this comment true, current, and useful? | AI may flag stale docs; verify in code. | REVIEW |
+| 9 | `float sdBox(vec3 p,vec3 b){vec3 q=abs(p)-b;return length(max(q,0.))+min(…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 10 | `float sdTorus(vec3 p,vec2 t){return length(vec2(length(p.xy)-t.x,p.z))-t…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 11 | `vec2 nearest(vec2 a,vec2 b){return a.x<b.x?a:b;}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 12 | `vec2 world(vec3 p){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 13 | `vec2 d=vec2(p.y+1.58,1.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 14 | `d=nearest(d,vec2(sdBox(p-vec3(0.,3.2,4.),vec3(9.,.09,12.)),2.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 15 | `d=nearest(d,vec2(sdBox(p-vec3(0.,-.10,7.2),vec3(9.,3.,.13)),2.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 16 | `vec3 side=p;side.x=abs(side.x)-3.4;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 17 | `d=nearest(d,vec2(sdBox(side-vec3(0.,.55,3.0),vec3(.16,2.1,.24)),3.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 18 | `d=nearest(d,vec2(sdBox(side-vec3(0.,2.2,3.0),vec3(.42,.09,1.8)),3.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 19 | `vec3 q=p-vec3(-.73,-.16,1.35);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 20 | `d=nearest(d,vec2(length(q)-.86,4.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 21 | `d=nearest(d,vec2(sdTorus(q,vec2(1.12,.073)),5.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 22 | `q.xz=mat2(.79,-.613,.613,.79)*q.xz;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 23 | `d=nearest(d,vec2(sdTorus(q,vec2(1.21,.031)),6.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 24 | `d=nearest(d,vec2(sdBox(p-vec3(-.73,-1.32,1.35),vec3(1.15,.22,1.11)),3.))…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 25 | `d=nearest(d,vec2(sdBox(p-vec3(-.73,2.58,1.35),vec3(2.8,.05,.09)),5.));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 26 | `return d;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 27 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 28 | `vec3 calcNormal(vec3 p){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 29 | `vec2 e=vec2(.004,0.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 30 | `return normalize(vec3(world(p+e.xyy).x-world(p-e.xyy).x,` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 31 | `world(p+e.yxy).x-world(p-e.yxy).x,` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 32 | `world(p+e.yyx).x-world(p-e.yyx).x));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 33 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 34 | `float ao(vec3 p,vec3 n){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 35 | `float a=0.,scale=1.;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 36 | `for(int i=1;i<=3;i++){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 37 | `float h=.09*float(i);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 38 | `a+=(h-world(p+n*h).x)*scale;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 39 | `scale*=.65;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 40 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 41 | `return clamp(1.-a*2.0,.48,1.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 42 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 43 | `float shadow(vec3 p,vec3 lightDir){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 44 | `float s=1.,t=.08;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 45 | `for(int i=0;i<11;i++){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 46 | `float h=world(p+lightDir*t).x;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 47 | `s=min(s,10.*h/t);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 48 | `t+=clamp(h,.08,.40);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 49 | `if(h<.008//t>4.)break;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 50 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 51 | `return clamp(s,.25,1.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 52 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 53 | `vec3 material(float id,vec3 p){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 54 | `if(id<1.5){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 55 | `vec2 tile=fract(p.xz*.29);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 56 | `float seams=smoothstep(.965,.995,max(tile.x,tile.y));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 57 | `float m=sin(p.x*2.6+p.z*.44+1.3*sin(p.z*1.1));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 58 | `return mix(vec3(.041,.075,.092),vec3(.105,.15,.176),.47+.24*m)*(1.-.22*s…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 59 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 60 | `if(id<2.5)return vec3(.05,.068,.08);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 61 | `if(id<3.5)return vec3(.24,.24,.225);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 62 | `if(id<4.5)return uScene<.5?vec3(.22,.37,.42):(uScene<1.5?vec3(.18,.20,.3…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 63 | `if(id<5.5)return mix(vec3(.56,.31,.11),vec3(.97,.75,.38),uRepaired*.4);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 64 | `return vec3(.48,.57,.65);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 65 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 66 | `void main(){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 67 | `vec2 uv=(gl_FragCoord.xy-.5*uResolution)/uResolution.y;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 68 | `vec3 ro=vec3(uPointer.x*.13,.55+uPointer.y*.09,-5.9);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 69 | `vec3 target=vec3(.42,-.2,1.45);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 70 | `vec3 forward=normalize(target-ro);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 71 | `vec3 right=normalize(cross(vec3(0.,1.,0.),forward));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 72 | `vec3 up=cross(forward,right);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 73 | `vec3 rd=normalize(uv.x*right+uv.y*up+forward*1.35);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 74 | `vec3 bg=mix(vec3(.009,.023,.043),vec3(.061,.087,.101),clamp(uv.y+.46,0.,…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 75 | `float travel=0.,id=-1.;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 76 | `for(int i=0;i<STEPS;i++){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 77 | `vec2 h=world(ro+rd*travel);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 78 | `if(h.x<.009){id=h.y;break;}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 79 | `if(travel>MAX_DIST)break;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 80 | `travel+=clamp(h.x*.79,.018,.63);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 81 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 82 | `vec3 col=bg;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 83 | `if(id>0.){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 84 | `vec3 p=ro+rd*travel;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 85 | `vec3 n=calcNormal(p);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 86 | `vec3 view=normalize(ro-p);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 87 | `vec3 L=normalize(vec3(-.52,.80,-.4));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 88 | `vec3 fill=normalize(vec3(.75,.35,-.3));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 89 | `float ambient=ao(p,n);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 90 | `float shaded=shadow(p+n*.025,L);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 91 | `float metallic=id>2.5?.85:.38;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 92 | `vec3 base=material(id,p);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 93 | `vec3 key=mix(vec3(.65,.84,1.),vec3(.65,1.,.81),uRepaired*.55);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 94 | `float diffuse=max(dot(n,L),0.)*shaded;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 95 | `float bounce=max(dot(n,fill),0.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 96 | `float spec=pow(max(dot(n,normalize(L+view)),0.),metallic>0.6?100.:35.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 97 | `float fres=pow(1.-max(dot(n,view),0.),5.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 98 | `col=base*(vec3(.19,.24,.28)+key*diffuse*1.2+vec3(.18,.22,.26)*bounce*.58…` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 99 | `col+=spec*shaded*vec3(1.,.8,.50)*(metallic>0.6?1.55:.55);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 100 | `col+=fres*vec3(.15,.27,.33)*(metallic*.85);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 101 | `if(id>4.5&&id<6.9)col+=vec3(.92,.56,.26)*(.38+uRepaired*.76);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 102 | `if(id<1.5){` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 103 | `vec3 refl=reflect(rd,n);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 104 | `float glint=pow(max(dot(refl,normalize(vec3(.15,.7,1.))),0.),18.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 105 | `col+=vec3(.18,.32,.42)*glint*.44;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 106 | `col+=vec3(.21,.32,.35)*exp(-23.*abs(p.x))*exp(-.16*abs(p.z-1.3))*.23;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 107 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 108 | `col=mix(col,bg,1.-exp(-.010*travel*travel));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 109 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 110 | `float bloom=exp(-8.*length(uv-vec2(0.,.04)));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 111 | `col+=vec3(.08,.16,.20)*bloom*(.2+uRepaired*.11);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 112 | `col*=clamp(1.-.18*pow(length(uv)*1.25,2.),.60,1.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 113 | `col*=2.45;` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 114 | `col=col/(1.+col);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 115 | `col=pow(max(col,0.),vec3(.78));` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 116 | `fragColor=vec4(col,1.);` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+| 117 | `}` | P2 | Does this shader improve visible realism without exhausting mobile GPU or distorting colors? | AI art direction may help; measure actual frame pacing and reliable CSS fallback. | TEST |
+
+### build.py — 15 physical lines
 
 | Line | Current source cue | Priority | Improvement question | AI: where useful / where not | Status |
 |---:|---|---|---|---|---|
@@ -528,12 +840,14 @@ Scope: each authored physical line in six canonical source files. Generated HTML
 | 5 | `assert app.count('/*INJECT_UPGRADE*/')==1` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
 | 6 | `app=app.replace('/*INJECT_UPGRADE*/',(root/'upgrade_runtime.js').read_te…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
 | 7 | `css=(root/'style.css').read_text()+'\n'+(root/'upgrade.css').read_text()` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 8 | `for anchor,content in [('/*BUILD_CSS*/',css),('/*BUILD_GSAP*/',(root/'gs…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 9 | `assert text.count(anchor)==1,(anchor,text.count(anchor))` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 10 | `text=text.replace(anchor,content)` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 11 | `assert '/*BUILD' not in text and '/*INJECT_UPGRADE*/' not in text` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 12 | `(root/'index.html').write_text(text)` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
-| 13 | `print('built public-safe interactive demo:',len(text),'characters, no ex…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 8 | `visual=(root/'visual-engine.js').read_text()` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 9 | `visual=visual.replace('/*BUILD_FRAGMENT*/',__import__('json').dumps((roo…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 10 | `for anchor,content in [('/*BUILD_CSS*/',css),('/*BUILD_GSAP*/',(root/'gs…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 11 | `assert text.count(anchor)==1,(anchor,text.count(anchor))` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 12 | `text=text.replace(anchor,content)` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 13 | `assert '/*BUILD' not in text and '/*INJECT_UPGRADE*/' not in text` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 14 | `(root/'index.html').write_text(text)` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
+| 15 | `print('built public-safe interactive demo:',len(text),'characters, no ex…` | P2 | Does this build instruction fail safely and produce a deterministic artifact? | Use lint, compilation and hashes instead of an LLM. | TEST |
 
 ## Hard requirements for the next pass
 - Validate accessibility with physical keyboard and screen reader; add an accessible close button for copy fallback.
