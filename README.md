@@ -17,6 +17,8 @@ I work across data, software, interactive media, commerce, and agent systems. Th
 
 **Two competing companies. Twenty roles. One question: can a better gift actually make it from an idea to someone's doorstep?**
 
+[![Bloomverse public proof: CI status](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml/badge.svg)](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml)
+
 Bloomverse is building a high-touch 3D floral experience. Its challenger, PetalRelay, is testing a simpler purchase path. The public journal documents the design choices, tested behavior, open defects and claims we still can't make.
 
 - **[Enter the Bloomverse engineering field journal](./field-notes/bloomverse/README.md)**
