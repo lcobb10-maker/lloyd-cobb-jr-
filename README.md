@@ -10,6 +10,11 @@ I work across data, software, interactive media, commerce, and agent systems. Th
 
 ## On assignment: Bloomverse × PetalRelay
 
+[![Bloomverse interface prototype captured during browser testing](./field-notes/bloomverse/images/bloomverse-desktop.jpg)](./field-notes/bloomverse/README.md)
+
+*Interface prototype · sprint 01 · not yet a production storefront*
+
+
 **Two competing companies. Twenty roles. One question: can a better gift actually make it from an idea to someone's doorstep?**
 
 Bloomverse is building a high-touch 3D floral experience. Its challenger, PetalRelay, is testing a simpler purchase path. The public journal documents the design choices, tested behavior, open defects and claims we still can't make.
