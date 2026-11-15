@@ -1,0 +1,26 @@
+name: Bloomverse public proof
+on:
+  push:
+    paths:
+      - "field-notes/bloomverse/**"
+      - ".github/workflows/bloomverse-public-proof.yml"
+  pull_request:
+    paths:
+      - "field-notes/bloomverse/**"
+      - ".github/workflows/bloomverse-public-proof.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-field-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public field notes
+        uses: actions/checkout@v4
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate redacted editorial evidence
+        run: python field-notes/bloomverse/proof/verify_public_receipt.py field-notes/bloomverse/evidence/sprint-01.json
