@@ -1,0 +1,37 @@
+{
+  "project": "Michelle’s Flowers · ITT TOLD’EM Partners",
+  "date": "2026-11-15",
+  "status": "Public interactive partner pilot",
+  "entry_url": "https://ittoldem.com/partners",
+  "final_route": "https://ittoldem.com/pages/partners",
+  "routing": "Shopify URL redirect (HTTP 301) from /partners to the published /pages/partners page",
+  "hosting": "Shopify partner page with a fullscreen, permitted iframe to AWS static 3D site over a temporary Cloudflare Quick Tunnel",
+  "evidence": {
+    "redirect_HTTP_301": true,
+    "shopify_page_HTTP_200": true,
+    "embedded_full_mobile_viewport": true,
+    "webgl_initialized": true,
+    "brand_visible": true,
+    "free_digital_gift_preview_px": [
+      1080,
+      1350
+    ],
+    "actual_branded_PNG_saved": true,
+    "automated_mobile_browser_checks": [
+      7,
+      7
+    ],
+    "sample_generated_PNG_bytes": 1706063
+  },
+  "links": {
+    "sample_image": "https://drops-merchandise-immunology-data.trycloudflare.com/showcases/michelles-flowers/sample-digital-gift.png",
+    "mobile_screenshot": "https://drops-merchandise-immunology-data.trycloudflare.com/showcases/michelles-flowers/mobile-preview-proof.png"
+  },
+  "limitations": [
+    "Automated mobile Chrome, not physical iPad Safari",
+    "Temporary iframe origin; the AWS HTTPS tunnel URL can rotate after a restart",
+    "Not a live flower store: no physical orders, floral availability or 3D-print manufacturing verified",
+    "A Shop.app embed warning from the pre-existing Shopify storefront was observed; it did not prevent the Michelle’s Flowers frame from working"
+  ],
+  "rights": "No private ICM source, supplier information, payment credentials, or unreleased architecture committed to GitHub."
+}
