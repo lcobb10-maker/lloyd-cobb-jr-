@@ -9,6 +9,13 @@ One took the scenic route. **Bloomverse** began with a 360-degree bouquet, a vas
 
 This is not a press release announcing two successful companies. It is a report on a controlled experiment, with enough evidence for a reader to see what's real—and enough restraint to acknowledge what isn't.
 
+
+| Bloomverse: interactive 3D prototype | PetalRelay: text-first challenger |
+|:--|:--|
+| ![Browser-tested Bloomverse interface](./images/bloomverse-desktop.jpg) | ![Browser-tested PetalRelay interface](./images/petalrelay-desktop.jpg) |
+
+*Both images are browser-test captures of locally running prototypes. They show interfaces—not a live shop, finished manufacturing pipeline, or paid sales.*
+
 ## From the first sprint
 
 | What I checked | What the evidence says |
