@@ -7,6 +7,8 @@ Two teams showed up with the same assignment: make gifting flowers better.
 
 One took the scenic route. **Bloomverse** began with a 360-degree bouquet, a vase that changes material, and the possibility of building an arrangement through conversation. The other, **PetalRelay**, took a shorter route: describe the moment, choose a gift, and get to approval.
 
+[![Bloomverse public proof: CI status](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml/badge.svg)](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml)
+
 This is not a press release announcing two successful companies. It is a report on a controlled experiment, with enough evidence for a reader to see what's real—and enough restraint to acknowledge what isn't.
 
 
