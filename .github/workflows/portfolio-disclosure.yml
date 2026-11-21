@@ -11,14 +11,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Verify permitted files and detect common disclosure indicators
+      - name: Verify inventory, disclosures and evidence
         shell: bash
         run: |
           python3 - <<'PY'
+          import json
           import pathlib
           import re
           import subprocess
-          expected = {'.github/workflows/portfolio-disclosure.yml', 'CASE-STUDIES.md', 'PUBLICATION-POLICY.md', 'README.md'}
+          expected = {'.github/workflows/portfolio-disclosure.yml', 'CASE-STUDIES.md', 'PUBLICATION-POLICY.md', 'README.md', 'EVIDENCE.json', 'examples/test_reconciliation.py'}
           actual = set(subprocess.check_output(['git', 'ls-files'], text=True).splitlines())
           patterns = [
               r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
@@ -32,13 +33,24 @@ jobs:
           ]
           def flagged(text):
               return any(re.search(pattern, text) for pattern in patterns)
-          # Synthetic self-tests; never print matched content.
           assert flagged('ghp_' + 'X' * 36)
           assert flagged('/home/' + 'ubuntu/example')
           assert not flagged('Reported first paint: 400 ms.')
           assert actual == expected, 'Unexpected public file inventory'
           for name in sorted(expected - {'.github/workflows/portfolio-disclosure.yml'}):
-              if flagged(pathlib.Path(name).read_text(encoding='utf-8')):
-                  raise SystemExit('Potential disclosure in approved document: ' + name)
-          print('Allowed file inventory and basic content checks passed.')
+              text = pathlib.Path(name).read_text(encoding='utf-8')
+              assert not flagged(text), 'Potential disclosure in ' + name
+              if name.endswith('.md'):
+                  for link in re.findall(r'\]\(\./([^\s)#]+)(?:#[^)]*)?\)', text):
+                      assert link in expected, 'Unapproved relative link in ' + name
+          records = json.loads(pathlib.Path('EVIDENCE.json').read_text())['records']
+          by_type = {r['type']: r for r in records}
+          assert by_type['demo_release_checks']['passed'] == 11
+          assert by_type['prototype_unit_tests']['passed'] == 17
+          assert by_type['role_automation']['independent_model_agents'] == 0
+          perf = by_type['lab_first_paint']
+          assert round(100 * (1 - perf['candidate_median_ms'] / perf['baseline_median_ms']), 1) == 32.4
+          print('Inventory, basic disclosure screen and evidence consistency passed.')
           PY
+      - name: Run synthetic evidence example
+        run: python3 -B -m unittest discover -s examples -p 'test_*.py' -v

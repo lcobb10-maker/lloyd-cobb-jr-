@@ -1,0 +1,56 @@
+{
+  "schema": "portfolio-evidence-v1",
+  "status": "reported controlled measurements",
+  "records": [
+    {
+      "date": "2026-11-13",
+      "type": "demo_release_checks",
+      "passed": 11,
+      "total": 11,
+      "reproducible_build": true,
+      "limitations": [
+        "physical-device and human validation open",
+        "not production release evidence"
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "type": "lab_first_paint",
+      "baseline_median_ms": 592,
+      "candidate_median_ms": 400,
+      "runs_per_version": 3,
+      "limitations": [
+        "local browser lab",
+        "not field data"
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "type": "prototype_unit_tests",
+      "passed": 17,
+      "failed": 0,
+      "limitations": [
+        "controlled prototype",
+        "no paid orders established"
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "type": "role_automation",
+      "deterministic_workers": 20,
+      "independent_model_agents": 0,
+      "limitations": [
+        "scripted automation only"
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "type": "snapshot_preservation",
+      "matching_files": 73,
+      "limitations": [
+        "snapshot files, not complete Git history",
+        "does not revoke prior public copies"
+      ]
+    }
+  ]
+}

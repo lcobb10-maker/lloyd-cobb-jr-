@@ -1,19 +1,20 @@
 # Public portfolio publication policy
 
-This repository is a recruiter-facing portfolio. Original material is rights-reserved unless an applicable license states otherwise. Public content can be viewed and forked; it is not protected by access controls.
+Public journalism and professional evidence; private product implementation. Original portfolio material is rights-reserved unless an applicable license states otherwise. Visibility is not confidentiality.
 
 ## Allowed
-- High-level case studies and role descriptions.
-- Verified or clearly qualified aggregate results.
-- Approved, redacted visuals and independently authored synthetic examples, only after explicit review.
-- Public references and attributed writing.
+- High-level case studies, role descriptions, qualified aggregate measurements.
+- Independently authored synthetic exercises with no proprietary dependencies or real customer records.
+- Approved redacted visuals and properly attributed public references.
 
-## Not allowed
-- Product source, detailed architecture, unpublished methods or prompts.
-- Credentials, customer data, production infrastructure information or private commercial terms.
-- Third-party materials without appropriate rights.
+## Denied
+- Product source, enabling architecture, unpublished inventions, agent prompts, sensitive operational information, credentials, customer records, commercial terms, or uncleared third-party assets.
 
-## Release review
-Before adding public content, check ownership, confidentiality, invention disclosure, credential exposure and factual accuracy. Record approval and detailed evidence in private systems. If uncertain, do not publish. Do not treat a passing automated check as clearance.
+## Release process
+1. Prepare changes in restricted storage; review intellectual property, privacy, rights, accuracy and invention disclosure **before** any public push or pull request.
+2. Obtain recorded owner approval for new public material.
+3. Run file inventory, content-screening and tests. Never print suspected secret values.
+4. Publish only approved content. Require checks and approval through repository rules where available.
+5. Verify anonymous access and monitor unexpected publication.
 
-The automated check is a basic file-allowlist guard; it does not establish that text is safe or detect every secret. Human approval and repository enforcement are separate requirements.
+Public CI detects only selected patterns and runs after content has reached GitHub; it does not replace private pre-publication review, comprehensive secret scanning, or enforced access rules. Historical Git objects, cached copies and forks may remain accessible. Do not claim historical containment without evidence.
