@@ -18,6 +18,8 @@ My work combines systems analysis, AI integration, data analytics, interactive c
 
 These are reported project measurements, not independently certified production outcomes.
 
+[Read the selected case studies](./CASE-STUDIES.md) · [Publication policy](./PUBLICATION-POLICY.md)
+
 ## How I work
 
 - Translate business requirements into scope, acceptance criteria, and measurable outcomes.

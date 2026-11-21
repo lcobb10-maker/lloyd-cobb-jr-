@@ -1,0 +1,17 @@
+name: Portfolio publication guard
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  allowlist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public file allowlist
+        shell: bash
+        run: |
+          printf '%s\n' '.github/workflows/portfolio-disclosure.yml' 'CASE-STUDIES.md' 'PUBLICATION-POLICY.md' 'README.md' | LC_ALL=C sort > /tmp/expected
+          git ls-files | LC_ALL=C sort > /tmp/actual
+          diff -u /tmp/expected /tmp/actual
