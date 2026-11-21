@@ -1,43 +1,42 @@
 # Lloyd Cobb Jr.
 
-**AI Solutions Analyst | Business Solutions Analyst | Solutions Architecture**
+**AI Solutions · Systems Architecture · Business & Data Analysis**
 
-I turn ambiguous business needs into testable software, measurable technical improvements, and evidence-based release decisions.
+I turn business problems into testable software, measurable improvements and evidence-based release decisions.
 
-My work combines systems analysis, AI integration, data analytics, interactive commerce, and software quality assurance. I document both results and limitations so stakeholders can make informed decisions.
+[LinkedIn](https://www.linkedin.com/in/calllloyd/) | [Engineering case studies](./CASE-STUDIES.md) | [Runnable Python example](./examples/test_reconciliation.py)
 
-[Connect on LinkedIn](https://www.linkedin.com/in/calllloyd/)
+## Selected evidence
 
-## Selected engineering case studies
-
-| Case study | Business problem | Evidence and outcome |
+| 32.4% | 11/11 | 17/17 |
 | --- | --- | --- |
-| Interactive commerce | Evaluate alternative customer experiences before investing in a production rollout. | Prototype engineering record reports 17 passing Python tests and browser-checked interactions. Customer purchases and production conversion are not established. |
-| Release assurance | Reduce risk in a complex interactive business demonstration. | Reported 11/11 automated release checks; a reproducible build and automated accessibility checks. Physical-device and customer validation remain open. |
-| Performance engineering | Improve responsiveness while preserving visual quality. | Controlled local Chrome comparison: median first paint improved from 592 ms to 400 ms (three runs per version); not production field data. |
+| First-paint time reduction | Automated release checks | Prototype unit tests |
+| 592 → 400 ms, lab median | Reproducible demo build | Controlled commerce prototype |
 
-These are reported project measurements, not independently certified production outcomes.
+*Historical engineering receipts, not production customer outcomes. Physical-device and human validation remain open.*
 
-[Read the selected case studies](./CASE-STUDIES.md) · [Publication policy](./PUBLICATION-POLICY.md)
+## Where I can contribute
 
-## How I work
+| Discipline | Application |
+| --- | --- |
+| AI solutions / forward deployed engineering | Requirements discovery, integration evaluation, model-output validation |
+| Solutions architecture | System boundaries, reliability, security and trade-off analysis |
+| Data and business analysis | KPI definitions, controlled experiments, quality checks and stakeholder reporting |
+| Technical project management | Scope, acceptance criteria, risk registers and release gates |
 
-- Translate business requirements into scope, acceptance criteria, and measurable outcomes.
-- Compare architectural options and document cost, performance, security, and usability trade-offs.
-- Build testable prototypes, automate regression checks, and investigate failures.
-- Communicate results, evidence quality, unresolved risks, and release readiness to technical and nontechnical stakeholders.
+## Selected work
 
-## Selected writing
+- [AI integration and agent evaluation](./CASE-STUDIES.md#1-enterprise-ai-integration) — distinguish verified automation from untested autonomy.
+- [Cloud and release assurance](./CASE-STUDIES.md#3-cloud-infrastructure-and-security) — reproducibility, preservation and disclosure controls.
+- [Data and interactive commerce](./CASE-STUDIES.md#4-data-analytics-and-business-intelligence) — compare experiences with measured baselines.
+- [Python evidence lab](./examples/test_reconciliation.py) — a small, synthetic reconciliation example with executable tests, not product source.
 
-My sports journalism experience informs the way I report technical evidence: investigate, check the numbers, and distinguish observations from conclusions.
+## Communication
 
-- [700 Yards Later: In Nash We Trust](https://www.theguardsman.com/700-yards-later-in-nash-we-trust/)
-- [How Do You Spell Success at CCSF — Women's Sports 2024–2025](https://www.theguardsman.com/how-do-you-spell-success-at-ccsf-womens-sports-2024-2025/)
+I bring an evidence-first reporting discipline from sports journalism into technical work.
 
-## Portfolio disclosure
+[700 Yards Later: In Nash We Trust](https://www.theguardsman.com/700-yards-later-in-nash-we-trust/) · [Women's Sports 2024–2025](https://www.theguardsman.com/how-do-you-spell-success-at-ccsf-womens-sports-2024-2025/)
 
-This portfolio is intended to demonstrate professional competency through high-level case studies and cleared evidence. It is not an invitation to reproduce proprietary products. Original materials are rights-reserved unless a separate applicable license expressly states otherwise. Public visibility does not prevent viewing or copying, or guarantee trade-secret or patent protection.
+[Full case studies and limitations](./CASE-STUDIES.md) · [Publication policy](./PUBLICATION-POLICY.md)
 
-Detailed product architecture, proprietary implementation, commercial strategy, and confidential operational records belong in restricted repositories. Specific technical examples can be discussed with prospective employers where authorized.
-
-© 2026 Lloyd Cobb Jr.
+Original portfolio material is rights-reserved. Proprietary implementations and commercial records are not part of the current portfolio files. © 2026 Lloyd Cobb Jr.
