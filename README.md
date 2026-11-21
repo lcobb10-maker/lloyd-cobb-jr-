@@ -1,47 +1,41 @@
 # Lloyd Cobb Jr.
 
-*Proof of works and thoughts.*
+**AI Solutions Analyst | Business Solutions Analyst | Solutions Architecture**
 
-**I build AI systems. Then verify what actually happened.**
+I turn ambiguous business needs into testable software, measurable technical improvements, and evidence-based release decisions.
 
-I report the work the same way I cover a game: get close enough to see the action, check the numbers, and don't award a victory before the final whistle.
+My work combines systems analysis, AI integration, data analytics, interactive commerce, and software quality assurance. I document both results and limitations so stakeholders can make informed decisions.
 
-I work across data, software, interactive media, commerce, and agent systems. This is the public record—work in motion, independent checks, hard questions, and the moments an idea has to stand up to evidence.
+[Connect on LinkedIn](https://www.linkedin.com/in/calllloyd/)
 
-## On assignment: Bloomverse × PetalRelay
+## Selected engineering case studies
 
-[![Bloomverse interface prototype captured during browser testing](./field-notes/bloomverse/images/bloomverse-desktop.jpg)](./field-notes/bloomverse/README.md)
+| Case study | Business problem | Evidence and outcome |
+| --- | --- | --- |
+| Interactive commerce | Evaluate alternative customer experiences before investing in a production rollout. | Prototype engineering record reports 17 passing Python tests and browser-checked interactions. Customer purchases and production conversion are not established. |
+| Release assurance | Reduce risk in a complex interactive business demonstration. | Reported 11/11 automated release checks; a reproducible build and automated accessibility checks. Physical-device and customer validation remain open. |
+| Performance engineering | Improve responsiveness while preserving visual quality. | Controlled local Chrome comparison: median first paint improved from 592 ms to 400 ms (three runs per version); not production field data. |
 
-*Interface prototype · sprint 01 · not yet a production storefront*
+These are reported project measurements, not independently certified production outcomes.
 
+## How I work
 
-**Two competing companies. Twenty roles. One question: can a better gift actually make it from an idea to someone's doorstep?**
+- Translate business requirements into scope, acceptance criteria, and measurable outcomes.
+- Compare architectural options and document cost, performance, security, and usability trade-offs.
+- Build testable prototypes, automate regression checks, and investigate failures.
+- Communicate results, evidence quality, unresolved risks, and release readiness to technical and nontechnical stakeholders.
 
-[![Bloomverse public proof: CI status](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml/badge.svg)](https://github.com/lcobb10-maker/lloyd-cobb-jr-/actions/workflows/bloomverse-public-proof.yml)
+## Selected writing
 
-Bloomverse is building a high-touch 3D floral experience. Its challenger, PetalRelay, is testing a simpler purchase path. The public journal documents the design choices, tested behavior, open defects and claims we still can't make.
+My sports journalism experience informs the way I report technical evidence: investigate, check the numbers, and distinguish observations from conclusions.
 
-- **[Enter the Bloomverse engineering field journal](./field-notes/bloomverse/README.md)**
-- [Read Dispatch 001: *The First Whistle*](./field-notes/bloomverse/dispatches/2026-11-15-opening-whistle.md)
-- [Inspect the sanitized sprint evidence](./field-notes/bloomverse/evidence/sprint-01.json)
-- [Inspect the public proof validator](./field-notes/bloomverse/proof/verify_public_receipt.py)
-- [Join the newsroom discussion / ask a hard question](https://github.com/lcobb10-maker/lloyd-cobb-jr-/issues/7)
+- [700 Yards Later: In Nash We Trust](https://www.theguardsman.com/700-yards-later-in-nash-we-trust/)
+- [How Do You Spell Success at CCSF — Women's Sports 2024–2025](https://www.theguardsman.com/how-do-you-spell-success-at-ccsf-womens-sports-2024-2025/)
 
-The initial engineering record includes **17 passing Python tests**, browser-verified 3D interactions and an explicit distinction between scripted workers and independent AI agents. No real customer transaction is claimed.
+## Portfolio disclosure
 
-## At the reporting desk
+This portfolio is intended to demonstrate professional competency through high-level case studies and cleared evidence. It is not an invitation to reproduce proprietary products. Original materials are rights-reserved unless a separate applicable license expressly states otherwise. Public visibility does not prevent viewing or copying, or guarantee trade-secret or patent protection.
 
-Before I was reporting on my own systems, I was reporting on the people and competition in front of me. Selected work from *The Guardsman*:
+Detailed product architecture, proprietary implementation, commercial strategy, and confidential operational records belong in restricted repositories. Specific technical examples can be discussed with prospective employers where authorized.
 
-- [*700 Yards Later: In Nash We Trust*](https://www.theguardsman.com/700-yards-later-in-nash-we-trust/) — player profile and sports feature
-- [*How Do You Spell Success at CCSF — Women's Sports 2024–2025*](https://www.theguardsman.com/how-do-you-spell-success-at-ccsf-womens-sports-2024-2025/) — season-wide reporting
-
-## Public work without donating the engine
-
-This is an intentionally **rights-reserved** reporting and verification portfolio. No open-source license is granted for the Bloomverse materials. Private source code, agent prompts, commercial orchestration, unpublished methods, operational secrets and third-party artwork are not published.
-
-[Read the disclosure policy](./field-notes/bloomverse/RIGHTS_AND_DISCLOSURE.md). A public repository provides visibility, **not** a guarantee of trade-secret or patent protection.
-
----
-
-*© 2026 Lloyd Cobb Jr. All rights reserved. The score gets reported as it happens.*
+© 2026 Lloyd Cobb Jr.
