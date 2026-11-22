@@ -31,6 +31,12 @@ I turn business problems into testable software, measurable improvements and evi
 - [Data and interactive commerce](./CASE-STUDIES.md#4-data-analytics-and-business-intelligence) — compare experiences with measured baselines.
 - [Python evidence lab](./examples/test_reconciliation.py) — a small, synthetic reconciliation example with executable tests, not product source.
 
+## Universe City — 1,000 company design studies
+
+[Open the interactive company directory](https://responses-determination-den-drink.trycloudflare.com/) | [All 1,000 individual demo addresses and rival targets](https://responses-determination-den-drink.trycloudflare.com/manifest)
+
+A synthetic experimental portfolio: ten industries, ten design languages and ten prompt interventions. Every address is a parameterized study with shared 3D assembly, press-and-hold inspection, guest conversation and a scenario tool. All 1,000 routes responded successfully in an automated staging check. Commercial functionality, physical-device verification, independent visual ranking and live game integration are not established. The link is a temporary research endpoint; availability is not guaranteed. No private implementation source or real customer records are published in this repository.
+
 ## Communication
 
 I bring an evidence-first reporting discipline from sports journalism into technical work.
