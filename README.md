@@ -1,42 +1,20 @@
-# Lloyd Cobb Jr.
+# GospelOS — Sustain your calling. Multiply your impact.
 
-**AI Solutions · Systems Architecture · Business & Data Analysis**
+Creator Business hackathon entry. An opportunity discovery and relationship pipeline for independent gospel artists. You.com live search grounds results in public sources; the app ranks leads with transparent heuristics and lets an artist draft and approve outreach, track relationships, plan voluntary giving and create a three-party sponsored ministry proposal.
 
-I turn business problems into testable software, measurable improvements and evidence-based release decisions.
+## Run
+Python 3.10+ and curl. `python app.py`, then open http://127.0.0.1:8080. For direct REST search, set YOU_API_KEY or YDC_API_KEY on the server before launch; never commit the key. Without a key the app calls You.com's official keyless MCP search. Keyless access documented at https://you.com/docs/using-the-api/authentication. REST API: https://you.com/docs/api-reference/search/v1-search.
 
-[LinkedIn](https://www.linkedin.com/in/calllloyd/) | [Engineering case studies](./CASE-STUDIES.md) | [Runnable Python example](./examples/test_reconciliation.py)
+Search leads are not confirmed gigs. The research snapshot is labeled. Scores are heuristics, payment unknown unless confirmed. Browser storage is local; export your pipeline. No automated email, bookings, transfers, charitable payments, ownership assignments or voice cloning. Sponsor allocation is a hypothetical proposal. Demo only, isolated from production CRM and private IP.
 
-## Selected evidence
+## Demo
+1. Enter Gospel, Newark NJ and choose Bookings. Discover live opportunities; open a source.
+2. Draft outreach, approve internally, choose follow-up date and save/export.
+3. Switch to Community service for voluntary ministry leads.
+4. Demonstrate a $5,000 revenue / $1,000 costs / 10% surplus give-back plan ($400).
+5. Sponsor a ministry: $1,000 sponsor, $700 artist, $200 community event, $100 estimated operations. Create proposal; increase artist fee past budget and see rejection.
 
-| 32.4% | 11/11 | 17/17 |
-| --- | --- | --- |
-| First-paint time reduction | Automated release checks | Prototype unit tests |
-| 592 → 400 ms, lab median | Reproducible demo build | Controlled commerce prototype |
+No claimed bookings, earnings or giving. The application is a reproducible prototype and the underlying CRM and ICM infrastructure are not part of this submission.
 
-*Historical engineering receipts, not production customer outcomes. Physical-device and human validation remain open.*
-
-## Where I can contribute
-
-| Discipline | Application |
-| --- | --- |
-| AI solutions / forward deployed engineering | Requirements discovery, integration evaluation, model-output validation |
-| Solutions architecture | System boundaries, reliability, security and trade-off analysis |
-| Data and business analysis | KPI definitions, controlled experiments, quality checks and stakeholder reporting |
-| Technical project management | Scope, acceptance criteria, risk registers and release gates |
-
-## Selected work
-
-- [AI integration and agent evaluation](./CASE-STUDIES.md#1-enterprise-ai-integration) — distinguish verified automation from untested autonomy.
-- [Cloud and release assurance](./CASE-STUDIES.md#3-cloud-infrastructure-and-security) — reproducibility, preservation and disclosure controls.
-- [Data and interactive commerce](./CASE-STUDIES.md#4-data-analytics-and-business-intelligence) — compare experiences with measured baselines.
-- [Python evidence lab](./examples/test_reconciliation.py) — a small, synthetic reconciliation example with executable tests, not product source.
-
-## Communication
-
-I bring an evidence-first reporting discipline from sports journalism into technical work.
-
-[700 Yards Later: In Nash We Trust](https://www.theguardsman.com/700-yards-later-in-nash-we-trust/) · [Women's Sports 2024–2025](https://www.theguardsman.com/how-do-you-spell-success-at-ccsf-womens-sports-2024-2025/)
-
-[Full case studies and limitations](./CASE-STUDIES.md) · [Publication policy](./PUBLICATION-POLICY.md)
-
-Original portfolio material is rights-reserved. Proprietary implementations and commercial records are not part of the current portfolio files. © 2026 Lloyd Cobb Jr.
+## Live demo and evidence
+Temporary hackathon demo: https://opinion-excerpt-opinion-arts.trycloudflare.com/ (ephemeral tunnel, uptime not guaranteed). Browser proof is in `browser-proof.log`. Run the browser check with `npm install --no-save playwright`, `npx playwright install chromium`, then `node test_public.cjs` while the server is running. Set DEMO_URL to test a deployed URL. Direct REST credentials are optional and the authenticated REST path has not been live-tested.
