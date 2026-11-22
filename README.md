@@ -33,9 +33,9 @@ I turn business problems into testable software, measurable improvements and evi
 
 ## Universe City — 1,000 company design studies
 
-[Open the interactive company directory](https://responses-determination-den-drink.trycloudflare.com/) | [All 1,000 individual demo addresses and rival targets](https://responses-determination-den-drink.trycloudflare.com/manifest)
+[Open the interactive company directory](https://responses-determination-den-drink.trycloudflare.com/) | [All 1,000 individual demo addresses and rival targets](https://responses-determination-den-drink.trycloudflare.com/manifest) | [Automated test evidence](https://responses-determination-den-drink.trycloudflare.com/proof)
 
-A synthetic experimental portfolio: ten industries, ten design languages and ten prompt interventions. Every address is a parameterized study with shared 3D assembly, press-and-hold inspection, guest conversation and a scenario tool. All 1,000 routes responded successfully in an automated staging check. Commercial functionality, physical-device verification, independent visual ranking and live game integration are not established. The link is a temporary research endpoint; availability is not guaranteed. No private implementation source or real customer records are published in this repository.
+A synthetic experimental portfolio: ten industries, ten design languages and ten prompt interventions. Every address is a parameterized study with shared 3D assembly, press-and-hold inspection, guest conversation and a scenario tool. All 1,000 routes responded successfully in an automated staging check. Ten browser samples, public touch emulation, a local-model response, two-session movement and chat, and guest rating submission were also tested. These are self-tests, not independent certification. Commercial functionality, physical-device verification, independent visual ranking and live game integration are not established. The link is a temporary research endpoint; availability is not guaranteed. No private implementation source or real customer records are published in this repository.
 
 ## Communication
 
